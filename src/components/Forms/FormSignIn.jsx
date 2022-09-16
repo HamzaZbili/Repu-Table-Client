@@ -18,9 +18,9 @@ const FormSignIn = () => {
 			console.log(user)
 			const res = await service.signin(user)
 			console.log(res)
-			storeToken(res.authToken)
+			storeToken(res.token)
 			await authenticateUser()
-			navigate("/")
+			navigate("/eateries")
 		} catch (error) {
 			console.log(error)
 			setError(error)

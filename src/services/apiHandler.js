@@ -38,14 +38,14 @@ service.signin = async (user) => {
 	}
 }
 
-// service.isLoggedIn = async () => {
-// 	try {
-// 		const { data } = await service.get("/auth/me")
-// 		return data
-// 	} catch (error) {
-// 		errorHandler(error)
-// 	}
-// }
+service.isLoggedIn = async () => {
+	try {
+		const { data } = await service.get("/auth/me")
+		return data
+	} catch (error) {
+		errorHandler(error)
+	}
+}
 // ? Example of a function created to...  getAllTheCats
 // service.getAllTheCats = () {
 // 	return service
