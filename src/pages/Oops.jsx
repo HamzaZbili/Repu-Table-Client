@@ -2,8 +2,8 @@ import { Link } from "react-router-dom"
 const Oops = () => {
 	return (
 		<>
-			<h1>Oops, that's a 404</h1>
-			<Link to="/">Go back to the Homepage</Link>
+			<h1>404 - page not found</h1>
+			<Link to="/">Click here to return to homepage</Link>
 		</>
 	)
 }

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom"
 
 const FormSignIn = () => {
 	const [user, setUser] = useState({
-		email: "",
+		username: "",
 		password: "",
 	})
 	const [error, setError] = useState(null)
@@ -15,6 +15,7 @@ const FormSignIn = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
+			console.log(user)
 			const res = await service.signin(user)
 			console.log(res)
 			storeToken(res.authToken)
@@ -31,15 +32,15 @@ const FormSignIn = () => {
 			{error && <h3 className="error">{error.message}</h3>}
 			<form onSubmit={handleSubmit}>
 				<h2>Signin</h2>
-				<label htmlFor="email">Email</label>
+				<label htmlFor="username">Username</label>
 				<input
-					type="email"
-					id="email"
-					name="email"
+					type="text"
+					id="username"
+					name="username"
 					onChange={(e) =>
 						setUser({ ...user, [e.target.name]: e.target.value })
 					}
-					value={user.email}
+					value={user.username}
 				/>
 				<label htmlFor="password">Password</label>
 				<input

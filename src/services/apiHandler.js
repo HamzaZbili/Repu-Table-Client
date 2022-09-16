@@ -28,8 +28,9 @@ service.signup = async (user) => {
 }
 
 service.signin = async (user) => {
+	console.log(process.env.REACT_APP_API_URL)
 	try {
-		const { data } = await service.post("/auth/signin", user)
+		const { data } = await service.post("/auth/login", user)
 		console.log(data)
 		return data
 	} catch (error) {
@@ -37,14 +38,14 @@ service.signin = async (user) => {
 	}
 }
 
-service.isLoggedIn = async () => {
-	try {
-		const { data } = await service.get("/auth/me")
-		return data
-	} catch (error) {
-		errorHandler(error)
-	}
-}
+// service.isLoggedIn = async () => {
+// 	try {
+// 		const { data } = await service.get("/auth/me")
+// 		return data
+// 	} catch (error) {
+// 		errorHandler(error)
+// 	}
+// }
 // ? Example of a function created to...  getAllTheCats
 // service.getAllTheCats = () {
 // 	return service
