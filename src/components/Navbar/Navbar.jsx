@@ -8,9 +8,6 @@ const Navbar = () => {
 	// console.log(currentUser)
 	return (
 		<nav className="Navbar">
-			<NavLink className="logo" to="/">
-				App name
-			</NavLink>
 			{isLoggedIn && (
 				<>
 					<NavLink to="/profile">{currentUser.email}</NavLink>
