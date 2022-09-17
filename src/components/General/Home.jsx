@@ -3,8 +3,6 @@ import React, { useEffect, useState } from 'react'
 import service from "../../services/apiHandler"
 import EateryCard from '../Eateries/EateryCard'
 
-const homeAPIURL = `${process.env.REACT_APP_API_URL}/eateries`
-
 const Home = () => {
   const [allEateries, setAllEateries] = useState([])
   useEffect(() => {
@@ -14,11 +12,12 @@ const Home = () => {
       setAllEateries(response.data)
     })
   }, [])
-  console.log(allEateries)
-
   return (
     <>
-    <h1>Home</h1>
+    <h1>List</h1>
+    {allEateries.map((eatery) => {
+      return <EateryCard key={eatery._id} eatery={eatery}/>
+    })}
     </>
   )
 }

@@ -16,11 +16,11 @@ const UserWrapper = ({ children }) => {
 			try {
 				const user = await service.isLoggedIn()
 				// Just a fancy console.log 😁
-				console.log(
-					`%c${user.email} is logged in`,
-					"display: inline-block ; border: 3px solid red ; border-radius: 7px ; " +
-						"padding: 10px ; margin: 20px ;"
-				)
+				// console.log(
+				// 	`%c${user.email} is logged in`,
+				// 	"display: inline-block ; border: 3px solid red ; border-radius: 7px ; " +
+				// 		"padding: 10px ; margin: 20px ;"
+				// )
 				setAuth({ currentUser: user, isLoading: false, isLoggedIn: true })
 			} catch (error) {
 				setAuth({ currentUser: null, isLoading: false, isLoggedIn: false })

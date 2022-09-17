@@ -7,7 +7,7 @@ import { NavLink } from "react-router-dom"
 const Layout = () => {
   return (
         <>
-        <NavLink className="logo" to="/home">
+        <NavLink className="logo" to="/eateries">
 				<h1>Repu-Table</h1>
         </NavLink>
                 <Navbar/>

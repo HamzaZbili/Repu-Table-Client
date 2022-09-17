@@ -1,0 +1,16 @@
+.eateryCard {
+    background-color: rgb(245, 167, 224);
+    margin: 1rem;
+    border-radius: 20px;
+    border: 2px solid rgb(195, 30, 187);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.eateryPicture {
+    width: 15rem;
+    border-radius: 20px;
+}
