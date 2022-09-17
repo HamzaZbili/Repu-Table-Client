@@ -15,7 +15,6 @@ const FormSignIn = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault()
 		try {
-			console.log(user)
 			const res = await service.signin(user)
 			console.log(res)
 			storeToken(res.token)

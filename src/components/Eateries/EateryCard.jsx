@@ -9,8 +9,7 @@ const EateryCard = ({eatery}) => {
       }, []);
     const {businessName, photo, rating} = eateryForCard
   return (
-    <div className="eateryCard">{businessName}dffadfd
-    <img className="eateryPicture" src={photo} alt="eatery image"/>
+    <div className="eateryCard" style={{backgroundImage: `url(${photo})`}}>{businessName}dffadfd
     </div>
   )
 }

@@ -21,10 +21,7 @@ const Navbar = () => {
 							{isLoggedIn && (
 				<>
 					<NavLink to="/profile" onClick={toggleNavbar}>{currentUser.username}</NavLink>
-					<NavLink to="/eateries" onClick={
-						removeUser
-						// toggleNavbar()
-					}>Log-Out</NavLink>
+					<NavLink to="/eateries" onClick={toggleNavbar}><div onClick={removeUser}>Log-Out</div></NavLink>
 				</>
 			)}
 			{!isLoggedIn && (

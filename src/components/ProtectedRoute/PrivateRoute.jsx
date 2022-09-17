@@ -3,7 +3,7 @@ import useAuth from "../../context/auth/useAuth"
 import { Navigate, Outlet } from "react-router-dom"
 
 const PrivateRoute = () => {
-	const { isLoggedIn, isLoading } = useAuth()
+	const { isLoggedIn, isLoading, currentUser } = useAuth()
 
 	// The application is still loading
 	if (isLoading) return <p>Loading...</p>

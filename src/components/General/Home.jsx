@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import service from "../../services/apiHandler"
 import EateryCard from '../Eateries/EateryCard'
@@ -15,7 +14,7 @@ const Home = () => {
   return (
     <>
     {allEateries.map((eatery) => {
-      return <EateryCard key={eatery._id} eatery={eatery}/>
+      return <EateryCard className="" key={eatery._id} eatery={eatery}/>
     })}
     </>
   )

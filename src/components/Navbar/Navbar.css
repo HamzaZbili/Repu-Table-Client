@@ -20,13 +20,13 @@ header {
 	justify-content: space-between;
 	height: 80px;
 	padding: 0 2rem;
-	background-color: let(--mainColor);
-	color: let(--textColor);
+	background-color: var(--mainColor);
+	color: var(--textColor);
 }
 
 nav a {
 	margin: 0 1rem;
-	color: let(--textColor);
+	color: var(--textColor);
 	text-decoration: none;
 }
 
