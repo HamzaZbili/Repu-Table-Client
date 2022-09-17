@@ -11,7 +11,6 @@ const UserWrapper = ({ children }) => {
 
 	const authenticateUser = useCallback(async () => {
 		const storedToken = localStorage.getItem("authToken")
-		console.log('Heeey')
 		if (storedToken) {
 			try {
 				const user = await service.isLoggedIn()

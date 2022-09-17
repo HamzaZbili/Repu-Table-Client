@@ -1,26 +1,48 @@
 import { NavLink } from "react-router-dom"
+import { useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
 import useAuth from "../../context/auth/useAuth"
 import "./Navbar.css"
 
 const Navbar = () => {
 	// We are getting the user and some functions from the context
 	const { isLoggedIn, currentUser, removeUser } = useAuth()
-	// console.log(currentUser)
+
+	const navRef = useRef();
+
+	const toggleNavbar = () => {
+		navRef.current.classList.toggle("responsive_nav");
+	};
+
+	
 	return (
-		<nav className="Navbar">
-			{isLoggedIn && (
+		<header>
+		<nav className="Navbar" ref={navRef}>
+							{isLoggedIn && (
 				<>
-					<NavLink to="/profile">{currentUser.email}</NavLink>
-					<button onClick={removeUser}>Log-Out</button>
+					<NavLink to="/profile" onClick={toggleNavbar}>{currentUser.username}</NavLink>
+					<NavLink to="/eateries" onClick={
+						removeUser
+						// toggleNavbar()
+					}>Log-Out</NavLink>
 				</>
 			)}
 			{!isLoggedIn && (
 				<>
-					<NavLink to="/signin">Log in</NavLink>
-					<NavLink to="/signup">Sign Up</NavLink>
+					<NavLink to="/signin" onClick={toggleNavbar}>Log in</NavLink>
+					<NavLink to="/signup" onClick={toggleNavbar}>Sign Up</NavLink>
 				</>
 			)}
-		</nav>
+				<button
+					className="nav-btn nav-close-btn"
+					onClick={toggleNavbar}>
+					<FaTimes />
+				</button>
+				</nav>
+			<button className="nav-btn" onClick={toggleNavbar}>
+				<FaBars />
+			</button>
+		</header>
 	)
 }
 

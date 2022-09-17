@@ -7,11 +7,10 @@ const EateryCard = ({eatery}) => {
     useEffect(() => {
         setEateryForCard(eatery)
       }, []);
-    const {businessName, photo, description} = eateryForCard
+    const {businessName, photo, rating} = eateryForCard
   return (
-    <div className="eateryCard">{businessName}
+    <div className="eateryCard">{businessName}dffadfd
     <img className="eateryPicture" src={photo} alt="eatery image"/>
-    <div className="description">{description? description.slice(0,80): ""}...</div>
     </div>
   )
 }
