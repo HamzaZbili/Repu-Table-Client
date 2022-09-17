@@ -14,7 +14,6 @@ const Home = () => {
   }, [])
   return (
     <>
-    <h1>List</h1>
     {allEateries.map((eatery) => {
       return <EateryCard key={eatery._id} eatery={eatery}/>
     })}
