@@ -19,7 +19,6 @@ const EateryDetailed = () => {
     <div className="eateryCard">
         <img src={photo} alt="eatery image"/>
         <h2>{businessName}</h2>
-
         <p>{description}</p>
     </div>
   )

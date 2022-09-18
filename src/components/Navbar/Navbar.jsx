@@ -19,8 +19,9 @@ const Navbar = () => {
 	return (
 		<header>
 				<div className="homeLogoAndSearchBar">
-		        <NavLink className="logo" to="/eateries">
+		        <NavLink to="/eateries">
 				<h1>repuTable</h1>
+				<h6>great employers, great food</h6>
         		</NavLink>
 				<SearchEateries/>
 				</div>

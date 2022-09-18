@@ -9,29 +9,53 @@
 }
 
 :root {
-	--mainColor: #e0dfdf;
-	--mainColorLight: #3b3b3b;
+	--mainColor: #dfded4;
+	--mainColorLight: #5767aa;
 	--secondaryColor: #db2b39;
-	--textColor: rgb(226, 111, 180);
+	--textColor: rgb(206, 95, 197);
 }
 
 header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	height: 80px;
+	height: 110px;
 	padding: 0 2rem;
-	background-color: var(--mainColor);
+	/* background-color: var(--mainColor); */
 	color: var(--textColor);
 }
 
 .homeLogoAndSearchBar {
 	display: flex;
 	flex-direction: column;
+	align-items: flex-start;
 }
 
 h1 {
 	font-size: 3rem;
+	padding-top: .5rem;
+	padding-bottom: 0;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+}
+
+h6 {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	position:relative;
+	top: -1rem;
+	left: 2rem;
+	background-color: transparent;
+}
+
+.searchBar {
+	background-color: rgb(160, 160, 160);
+	width: 80vw;
+	border-radius: 30px;
+	color: white;
+	padding: .3rem;
+	margin-bottom: 1rem;
 }
 
 nav a {
@@ -71,9 +95,9 @@ nav {
 	header nav {
 		position: fixed;
 		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
+		right: 0;
+		height: 40%;
+		width: 40%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -82,6 +106,7 @@ nav {
 		background-color: var(--mainColor);
 		transition: 1s;
 		transform: translateY(-100vh);
+		border-radius: 0px 0px 0px 50px;
 	}
 
 	header .responsive_nav {

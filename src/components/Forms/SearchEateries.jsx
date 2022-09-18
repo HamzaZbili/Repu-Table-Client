@@ -1,8 +1,9 @@
 import React from 'react'
+import '../../styles/navbar.css'
 
 const SearchEateries = () => {
   return (
-    <div>SearchEateries</div>
+    <div className='searchBar'>SearchEateries</div>
   )
 }
 
