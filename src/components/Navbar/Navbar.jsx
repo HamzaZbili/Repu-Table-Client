@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom"
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import useAuth from "../../context/auth/useAuth"
-import "./Navbar.css"
+import SearchEateries from "../Forms/SearchEateries";
+import "../../styles/navbar.css"
 
 const Navbar = () => {
 	// We are getting the user and some functions from the context
@@ -17,17 +18,23 @@ const Navbar = () => {
 	
 	return (
 		<header>
+				<div className="homeLogoAndSearchBar">
+		        <NavLink className="logo" to="/eateries">
+				<h1>repuTable</h1>
+        		</NavLink>
+				<SearchEateries/>
+				</div>
 		<nav className="Navbar" ref={navRef}>
 							{isLoggedIn && (
 				<>
 					<NavLink to="/profile" onClick={toggleNavbar}>{currentUser.username}</NavLink>
-					<NavLink to="/eateries" onClick={toggleNavbar}><div onClick={removeUser}>Log-Out</div></NavLink>
+					<NavLink to="/eateries" onClick={toggleNavbar}><div onClick={removeUser}>logout</div></NavLink>
 				</>
 			)}
 			{!isLoggedIn && (
 				<>
-					<NavLink to="/signin" onClick={toggleNavbar}>Log in</NavLink>
-					<NavLink to="/signup" onClick={toggleNavbar}>Sign Up</NavLink>
+					<NavLink to="/signin" onClick={toggleNavbar}>login</NavLink>
+					<NavLink to="/signup" onClick={toggleNavbar}>sign up</NavLink>
 				</>
 			)}
 				<button

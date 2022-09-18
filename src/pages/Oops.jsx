@@ -3,7 +3,7 @@ const Oops = () => {
 	return (
 		<>
 			<h1>404 - page not found</h1>
-			<Link to="/">Click here to return to homepage</Link>
+			<Link to="/eateries">Click here to return to homepage</Link>
 		</>
 	)
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import service from "../../services/apiHandler"
 import EateryCard from '../Eateries/EateryCard'
+import { Link } from 'react-router-dom'
 
-const Home = () => {
+const HomeFeed = () => {
   const [allEateries, setAllEateries] = useState([])
   useEffect(() => {
     service
@@ -14,10 +15,13 @@ const Home = () => {
   return (
     <>
     {allEateries.map((eatery) => {
-      return <EateryCard className="" key={eatery._id} eatery={eatery}/>
+      const eateryLink = `/eateries/${eatery._id}`
+      return <Link to={eateryLink} key={eatery._id}>
+      <EateryCard className="" eatery={eatery}/>
+      </Link>
     })}
     </>
   )
 }
 
-export default Home
+export default HomeFeed
