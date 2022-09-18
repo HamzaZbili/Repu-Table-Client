@@ -16,7 +16,7 @@ const EateryDetailed = () => {
       }, [])
     const {businessName, photo, description} = eateryDetailed
   return (
-    <div className="eateryCard">
+    <div className="eateryDetailed">
         <img src={photo} alt="eatery image"/>
         <h2>{businessName}</h2>
         <p>{description}</p>

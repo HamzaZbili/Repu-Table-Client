@@ -1,0 +1,14 @@
+.contactUs {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+h3 {
+    text-align: left;
+    padding-left: 3rem;
+}
+
+h5 {
+    padding-left: 3rem;
+}

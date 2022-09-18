@@ -28,7 +28,7 @@ service.signup = async (user) => {
 }
 
 service.signin = async (user) => {
-	console.log(process.env.REACT_APP_API_URL)
+	// console.log(process.env.REACT_APP_API_URL)
 	try {
 		const { data } = await service.post("/auth/login", user)
 		console.log(data)

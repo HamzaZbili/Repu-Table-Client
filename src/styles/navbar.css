@@ -8,11 +8,15 @@
 	font-family: 'Lato', sans-serif;
 }
 
+html {
+	background-color: #e8e8e8;
+}
+
 :root {
-	--mainColor: #dfded4;
+	--mainColor: #e8e8e8;
 	--mainColorLight: #5767aa;
 	--secondaryColor: #db2b39;
-	--textColor: rgb(206, 95, 197);
+	--textColor: #ff65c4;
 }
 
 header {
@@ -21,8 +25,13 @@ header {
 	justify-content: space-between;
 	height: 110px;
 	padding: 0 2rem;
-	/* background-color: var(--mainColor); */
+	background-color: var(--mainColor);
 	color: var(--textColor);
+}
+
+.logo {
+	background-color: #5767aa;
+	height: 2rem;
 }
 
 .homeLogoAndSearchBar {
