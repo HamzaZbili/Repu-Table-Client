@@ -1,9 +1,19 @@
 import React from 'react'
+import { Input } from 'antd'
 import '../../styles/navbar.css'
 
-const SearchEateries = () => {
+const SearchEateries = ({searchQuery, setSearchQuery}) => {
   return (
-    <div className='searchBar'>SearchEateries</div>
+    <>
+    {/* <Divider>Search</Divider> */}
+    <Input
+      className='searchBar'
+      value={searchQuery}
+      placeholder="search by cuisine"
+      type="text"
+      onChange={(e) => setSearchQuery(e.target.value.toLocaleLowerCase())}
+    />
+  </>
   )
 }
 

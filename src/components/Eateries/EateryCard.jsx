@@ -11,8 +11,8 @@ const EateryCard = ({eatery}) => {
   return (
     <div className="eateryCard" style={{backgroundImage: `url(${photo})`}}>
       <div className="shortDetails">
-        {businessName}
-        {rating}
+        <h6>{businessName}</h6>
+        <p>{rating}</p>
       </div>
     </div>
   )

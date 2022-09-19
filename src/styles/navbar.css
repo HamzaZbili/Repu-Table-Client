@@ -9,11 +9,11 @@
 }
 
 html {
-	background-color: #e8e8e8;
+	background-color: #eaeaea;
 }
 
 :root {
-	--mainColor: #e8e8e8;
+	--mainColor: #eaeaea;
 	--mainColorLight: #5767aa;
 	--secondaryColor: #db2b39;
 	--textColor: #ff65c4;
@@ -29,12 +29,7 @@ header {
 	color: var(--textColor);
 }
 
-.logo {
-	background-color: #5767aa;
-	height: 2rem;
-}
-
-.homeLogoAndSearchBar {
+.homeLogo {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -64,7 +59,15 @@ h6 {
 	border-radius: 30px;
 	color: white;
 	padding: .3rem;
-	margin-bottom: 1rem;
+	padding-left: 2rem;
+	margin-left: 2rem;
+}
+
+.searchBar:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
 
 nav a {

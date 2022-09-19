@@ -16,10 +16,10 @@ const EateryDetailed = () => {
       }, [])
     const {businessName, photo, description} = eateryDetailed
   return (
-    <div className="eateryDetailed">
+    <div className="eateryContainer">
         <img src={photo} alt="eatery image"/>
-        <h2>{businessName}</h2>
-        <p>{description}</p>
+          <h2>{businessName}</h2>
+          <p>{description}</p>
     </div>
   )
 }

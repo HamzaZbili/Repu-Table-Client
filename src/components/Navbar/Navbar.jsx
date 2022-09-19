@@ -2,7 +2,6 @@ import { Link, NavLink } from "react-router-dom"
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import useAuth from "../../context/auth/useAuth"
-import SearchEateries from "../Forms/SearchEateries";
 import "../../styles/navbar.css"
 
 const Navbar = () => {
@@ -14,16 +13,31 @@ const Navbar = () => {
 		navRef.current.classList.toggle("responsive_nav");
 	};
 	
-	
 	return (
 		<header>
-				<div className="homeLogoAndSearchBar">
+				<div className="homeLogo">
 					<Link to="/eateries">
 						<img src="../../images/logo.png" alt="logo"/>
      				 </Link>
-				<SearchEateries/>
 				</div>
 		<nav className="Navbar" ref={navRef}>
+				<>
+				{currentUser? <>
+				{currentUser.role === 'super'?
+				<NavLink to="/mod/users">users</NavLink> &&
+				<NavLink to="/mod/eateries">eateries</NavLink>
+				:
+				currentUser.role === 'moderator'?
+				<NavLink to="/mod/eateries">eateries</NavLink>:
+				currentUser.role === 'user'?
+				<NavLink to="/eateries/my">account</NavLink>:
+				<>
+				</>}
+				</>:
+				
+				
+				<></>}
+				</>
 					{isLoggedIn && (
 				<>
 					{/* <NavLink to="/profile" onClick={toggleNavbar}>{currentUser.username}</NavLink> */}
