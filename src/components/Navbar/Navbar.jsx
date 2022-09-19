@@ -24,13 +24,17 @@ const Navbar = () => {
 				<>
 				{currentUser? <>
 				{currentUser.role === 'super'?
-				<NavLink to="/mod/users">users</NavLink> &&
-				<NavLink to="/mod/eateries">eateries</NavLink>
+				<NavLink to="/mod/users" onClick={toggleNavbar}>
+					users</NavLink> &&
+				<NavLink to="/mod/eateries" onClick={toggleNavbar}>
+					eateries</NavLink>
 				:
 				currentUser.role === 'moderator'?
-				<NavLink to="/mod/eateries">eateries</NavLink>:
+				<NavLink to="/mod/eateries" onClick={toggleNavbar}>
+					eateries</NavLink>:
 				currentUser.role === 'user'?
-				<NavLink to="/eateries/my">account</NavLink>:
+				<NavLink to="/account" onClick={toggleNavbar}>
+					account</NavLink>:
 				<>
 				</>}
 				</>:

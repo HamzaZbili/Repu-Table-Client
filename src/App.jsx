@@ -10,6 +10,7 @@ import Welcome from "./components/General/Welcome"
 import EateryDetailed from "./components/Eateries/EateryDetailed"
 import Guidelines from "./pages/Guidelines"
 import ContactUs from "./pages/ContactUs"
+import UserAccount from "./pages/UserAccount"
 
 function App() {
 	return (
@@ -23,6 +24,8 @@ function App() {
 					<Route path="/signin" element={<Signin/>}/>
 					<Route path="/signup" element={<Signup/>}/>
 					<Route path="/eateries/:id" element={<EateryDetailed/>}/>
+					
+					<Route path="/account" element={<UserAccount/>}/>
 				</Route>
 			<Route path="*" element={<Oops />} />
 			</Routes>

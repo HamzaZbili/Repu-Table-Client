@@ -16,7 +16,7 @@ const FormSignIn = () => {
 		e.preventDefault()
 		try {
 			const res = await service.signin(user)
-			console.log(res)
+			// console.log(res)
 			storeToken(res.token)
 			await authenticateUser()
 			navigate("/eateries")

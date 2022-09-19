@@ -21,7 +21,7 @@ const HomeFeed = () => {
     .map((eatery) => {
       const eateryLink = `/eateries/${eatery._id}`
       return <Link to={eateryLink} key={eatery._id}>
-      <EateryCard className="" eatery={eatery}/>
+      <EateryCard eatery={eatery}/>
       </Link>
     })}
     </>
