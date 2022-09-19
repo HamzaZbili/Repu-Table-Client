@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import service from '../../services/apiHandler'
-import '../../styles/eateryCard.css'
+import './eateryCard.css'
 
 const EateryDetailed = () => {
     const [eateryDetailed, setEateryDetailed] = useState({})

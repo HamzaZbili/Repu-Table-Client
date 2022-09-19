@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input } from 'antd'
-import '../../styles/navbar.css'
+import '../Navbar/navbar.css'
 
 const SearchEateries = ({searchQuery, setSearchQuery}) => {
   return (

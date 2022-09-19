@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import useAuth from '../../context/auth/useAuth'
 import service from '../../services/apiHandler'
-import '../../styles/becomeReputableForm.css'
+import './becomeReputableForm.css'
 
 const BecomeReputable = () => {
   const {id} = useParams()

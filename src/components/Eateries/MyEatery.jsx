@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import '../../styles/myEateries.css'
+import './myEateries.css'
 
 const MyEatery = ({eatery}) => {
     const manageEateryLink = `/eateries/join/${eatery._id}`

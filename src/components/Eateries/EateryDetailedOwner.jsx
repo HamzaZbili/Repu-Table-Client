@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import useAuth from '../../context/auth/useAuth'
 import service from '../../services/apiHandler'
-import '../../styles/eateryCard.css'
+import './eateryCard.css'
 
 const EateryDetailedOwner = () => {
     const [eateryDetailed, setEateryDetailed] = useState({})

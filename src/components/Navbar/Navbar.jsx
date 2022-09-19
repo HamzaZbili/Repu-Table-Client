@@ -2,7 +2,8 @@ import { Link, NavLink } from "react-router-dom"
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import useAuth from "../../context/auth/useAuth"
-import "../../styles/navbar.css"
+import "./navbar.css"
+import logo from "../../images/logo.png"
 
 const Navbar = () => {
 	// We are getting the user and some functions from the context
@@ -17,17 +18,21 @@ const Navbar = () => {
 		<header>
 				<div className="homeLogo">
 					<Link to="/eateries">
-						<img src="../../images/logo.png" alt="logo"/>
+						<img src={logo} alt="logo"/>
      				 </Link>
 				</div>
 		<nav className="Navbar" ref={navRef}>
 				<>
+				<p>   </p>
+				<p>   </p>
 				{currentUser? <>
 				{currentUser.role === 'super'?
+				<>
 				<NavLink to="/mod/users" onClick={toggleNavbar}>
-					users</NavLink> &&
+					users</NavLink>
 				<NavLink to="/mod/eateries" onClick={toggleNavbar}>
 					eateries</NavLink>
+				</>
 				:
 				currentUser.role === 'moderator'?
 				<NavLink to="/mod/eateries" onClick={toggleNavbar}>
@@ -38,8 +43,6 @@ const Navbar = () => {
 				<>
 				</>}
 				</>:
-				
-				
 				<></>}
 				</>
 					{isLoggedIn && (

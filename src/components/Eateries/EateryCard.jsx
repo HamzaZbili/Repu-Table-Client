@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
-import '../../styles/eateryCard.css'
+import './eateryCard.css'
 
 const EateryCard = ({eatery}) => {
     const [eateryForCard, setEateryForCard] = useState({})
