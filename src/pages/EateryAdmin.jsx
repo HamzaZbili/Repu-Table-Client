@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import service from '../services/apiHandler'
+import PendingApplications from './PendingApplications'
 
 const EateryAdmin = () => {
-  const [pendingApplications, setPendingApplications] = useState()
+  const [pendingApplications, setPendingApplications] = useState([])
   useEffect(() => {
-    service
-    .get('/mod/eateries/pending')
-    .then(({data}) => {
-      setPendingApplications(data)
-    })
-  }, [])
-  console.log(pendingApplications)
+    try {
+      service
+      .get(`/mod/eateries/pending`)
+      .then((response) => {
+        setPendingApplications(response.data)
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    }, [])
   return (
-    <div></div>
+    <div>{pendingApplications.map((eatery) => {
+      return<PendingApplications eatery={eatery}/>
+    })
+    }</div>
   )
 }
 
