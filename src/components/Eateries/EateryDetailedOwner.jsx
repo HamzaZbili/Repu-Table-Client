@@ -7,7 +7,7 @@ import '../../styles/eateryCard.css'
 
 const EateryDetailedOwner = () => {
     const [eateryDetailed, setEateryDetailed] = useState({})
-    const { currentUser} = useAuth()
+    // const { currentUser} = useAuth()
     const { id } = useParams()
     useEffect(() => {
       try {

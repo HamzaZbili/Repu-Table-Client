@@ -19,7 +19,6 @@ const EateryDetailed = () => {
       }
 
       }, [])
-      console.log(eateryDetailed)
     const {businessName, photo, description} = eateryDetailed
   return (
     <div className="eateryContainer">

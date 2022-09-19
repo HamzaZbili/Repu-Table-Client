@@ -44,7 +44,6 @@ const Navbar = () => {
 				</>
 					{isLoggedIn && (
 				<>
-					{/* <NavLink to="/profile" onClick={toggleNavbar}>{currentUser.username}</NavLink> */}
 					<NavLink to="/eateries" onClick={toggleNavbar}><div onClick={removeUser}>logout</div></NavLink>
 					<div></div>
 				</>

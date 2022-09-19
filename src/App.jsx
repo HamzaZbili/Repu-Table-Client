@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom"
-import Profile from "./pages/Profile"
 import Signin from "./pages/Signin"
 import Signup from "./pages/Signup"
 import Oops from "./pages/Oops"
