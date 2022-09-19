@@ -1,0 +1,7 @@
+.myEateries {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}

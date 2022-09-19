@@ -1,11 +1,13 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import '../../styles/myEateries.css'
 
 const MyEatery = ({eatery}) => {
-    const manageEateryLink = `/eateries/my/${eatery._id}`
-    const eateryLink = `/eateries/${eatery._id}`
+    const manageEateryLink = `/eateries/join/${eatery._id}`
+    const eateryLink = `/eateries/my/${eatery._id}`
+    console.log(eatery)
   return (
-    <div>
+    <div className='myEateries'>
         <NavLink to={eateryLink}>{eatery.businessName}</NavLink>
         <NavLink to={manageEateryLink}>manage</NavLink>
     </div>

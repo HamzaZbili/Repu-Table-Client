@@ -11,6 +11,8 @@ import EateryDetailed from "./components/Eateries/EateryDetailed"
 import Guidelines from "./pages/Guidelines"
 import ContactUs from "./pages/ContactUs"
 import UserAccount from "./pages/UserAccount"
+import BecomeReputable from "./components/Forms/BecomeReputable"
+import EateryDetailedOwner from "./components/Eateries/EateryDetailedOwner"
 
 function App() {
 	return (
@@ -18,13 +20,16 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route path="/" element={<Welcome/>}/>
+					<Route path="/signin" element={<Signin/>}/>
+					<Route path="/signup" element={<Signup/>}/>
 					<Route path="/eateries" element={<HomeFeed/>}/>
 					<Route path="/guidelines" element={<Guidelines/>}/>
 					<Route path="/contactus" element={<ContactUs/>}/>
-					<Route path="/signin" element={<Signin/>}/>
-					<Route path="/signup" element={<Signup/>}/>
 					<Route path="/eateries/:id" element={<EateryDetailed/>}/>
-					
+					<Route element={<PrivateRoute />}>
+							<Route path="/eateries/my/:id" element={<EateryDetailedOwner/>}/>
+							<Route path="/eateries/join/:id" element={<BecomeReputable/>}/>
+					</Route>
 					<Route path="/account" element={<UserAccount/>}/>
 				</Route>
 			<Route path="*" element={<Oops />} />

@@ -1,25 +1,26 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
+import useAuth from '../../context/auth/useAuth'
 import service from '../../services/apiHandler'
 import '../../styles/eateryCard.css'
 
-const EateryDetailed = () => {
+const EateryDetailedOwner = () => {
     const [eateryDetailed, setEateryDetailed] = useState({})
+    const { currentUser} = useAuth()
     const { id } = useParams()
     useEffect(() => {
       try {
         service
-        .get(`/eateries/${id}`)
+        .get(`/eateries/my/${id}`)
         .then((response) => {
-            setEateryDetailed(response.data[0])
+            setEateryDetailed(response.data)
         })
       } catch (error) {
         console.log(error)
       }
 
       }, [])
-      console.log(eateryDetailed)
     const {businessName, photo, description} = eateryDetailed
   return (
     <div className="eateryContainer">
@@ -30,4 +31,4 @@ const EateryDetailed = () => {
   )
 }
 
-export default EateryDetailed
+export default EateryDetailedOwner
