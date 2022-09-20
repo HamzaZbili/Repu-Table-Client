@@ -1,17 +1,17 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import './myEateries.css'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./myEateries.css";
 
-const MyEatery = ({eatery}) => {
-    const manageEateryLink = `/eateries/join/${eatery._id}`
-    const eateryLink = `/eateries/my/${eatery._id}`
-    
+const MyEatery = ({ eatery }) => {
+  const manageEateryLink = `/eateries/join/${eatery._id}`;
+  const eateryLink = `/eateries/my/${eatery._id}`;
+
   return (
-    <div className='myEateries'>
-        <NavLink to={eateryLink}>{eatery.businessName}</NavLink>
-        <NavLink to={manageEateryLink} eatery={eatery.businessName}>manage</NavLink>
+    <div className="myEateries">
+      <NavLink to={eateryLink}>{eatery.businessName}</NavLink>
+      <NavLink to={manageEateryLink}>apply</NavLink>
     </div>
-  )
-}
+  );
+};
 
-export default MyEatery
+export default MyEatery;
