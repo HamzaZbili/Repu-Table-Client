@@ -9,7 +9,7 @@ const MyEatery = ({eatery}) => {
   return (
     <div className='myEateries'>
         <NavLink to={eateryLink}>{eatery.businessName}</NavLink>
-        <NavLink to={manageEateryLink}>manage</NavLink>
+        <NavLink to={manageEateryLink} eatery={eatery.businessName}>manage</NavLink>
     </div>
   )
 }

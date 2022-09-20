@@ -7,7 +7,7 @@ const PrivateRoute = () => {
 
 	// The application is still loading
 	if (isLoading) return <p>Loading...</p>
-	// We are anot logged in
+	// We are not logged in
 	if (!isLoggedIn) return <Navigate to="/signin" />
 	// We can render the child routes here
 	else return <Outlet />

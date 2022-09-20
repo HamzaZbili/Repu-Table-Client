@@ -2,12 +2,13 @@ import React from 'react'
 import './PendingApplications.css'
 
 const PendingApplications = ({eatery}) => {
+  const {businessName, website, address, phoneNumber} = eatery
+
+
   return (
     <div>
-    <h5>{eatery.businessName}</h5>
-    <p>{eatery.hasSignedDeclaration}</p>
-    <p>{eatery.isReputable}</p>
-    <p>{eatery.website}</p>
+    <h4>{businessName}</h4>
+    <p>{address}<br/>{phoneNumber}<br/>{website}</p>
     </div>
   )
 }

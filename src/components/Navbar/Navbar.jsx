@@ -31,15 +31,15 @@ const Navbar = () => {
 				<NavLink to="/mod/users" onClick={toggleNavbar}>
 					users</NavLink>
 				<NavLink to="/mod/eateries" onClick={toggleNavbar}>
-					eateries</NavLink>
+					wannaBes</NavLink>
 				</>
 				:
 				currentUser.role === 'moderator'?
 				<NavLink to="/mod/eateries" onClick={toggleNavbar}>
-					eateries</NavLink>:
-				currentUser.role === 'user'?
-				<NavLink to="/account" onClick={toggleNavbar}>
-					account</NavLink>:
+					wannaBes</NavLink>:
+				currentUser.role === 'eateryAccount'?
+				<NavLink to="/my/eateries" onClick={toggleNavbar}>
+					my eateries</NavLink>:
 				<>
 				</>}
 				</>:

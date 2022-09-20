@@ -21,14 +21,12 @@ const FormSignIn = () => {
 			await authenticateUser()
 			navigate("/eateries")
 		} catch (error) {
-			console.log(error)
 			setError(error)
 		}
 	}
 
 	return (
 		<>
-			{error && <h3 className="error">{error.message}</h3>}
 			<form onSubmit={handleSubmit}>
 				<h2>Signin</h2>
 				<label htmlFor="username">Username</label>
@@ -52,6 +50,7 @@ const FormSignIn = () => {
 					value={user.password}
 				/>
 				<button>Submit</button>
+				{error && <h3 className="error">{error.message}</h3>}
 			</form>
 		</>
 	)

@@ -16,11 +16,12 @@ const EateryAdmin = () => {
     }
     }, [])
   return (
+    <><h2>pending applications</h2>
     <div>{pendingApplications.map((eatery) => {
-      return<PendingApplications eatery={eatery}/>
+      return<PendingApplications eatery={eatery} key={eatery.id}/>
     })
     }</div>
-  )
+  </>)
 }
 
 export default EateryAdmin

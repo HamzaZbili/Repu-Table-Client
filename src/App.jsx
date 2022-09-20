@@ -10,7 +10,7 @@ import EateryDetailed from "./components/Eateries/EateryDetailed"
 import Guidelines from "./pages/Guidelines"
 import ContactUs from "./pages/ContactUs"
 import UserAccount from "./pages/UserAccount"
-import BecomeReputable from "./components/Forms/BecomeReputable"
+import BecomeReputableForm from "./components/Forms/BecomeReputableForm"
 import EateryDetailedOwner from "./components/Eateries/EateryDetailedOwner"
 import EateryAdmin from "./pages/EateryAdmin"
 
@@ -28,10 +28,10 @@ function App() {
 					<Route path="/eateries/:id" element={<EateryDetailed/>}/>
 					<Route element={<PrivateRoute />}>
 							<Route path="/eateries/my/:id" element={<EateryDetailedOwner/>}/>
-							<Route path="/eateries/join/:id" element={<BecomeReputable/>}/>
+							<Route path="/eateries/join/:id" element={<BecomeReputableForm/>}/>
 							<Route path="/mod/eateries" element={<EateryAdmin/>}/>
+							<Route path="/my/eateries" element={<UserAccount/>}/>
 					</Route>
-					<Route path="/account" element={<UserAccount/>}/>
 				</Route>
 			<Route path="*" element={<Oops />} />
 			</Routes>
