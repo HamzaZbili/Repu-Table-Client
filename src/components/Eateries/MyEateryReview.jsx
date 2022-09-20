@@ -1,17 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./myEateries.css";
 
-const MyEatery = ({ eatery }) => {
+const MyEateryReview = ({ eatery }) => {
   const manageEateryLink = `/eateries/join/${eatery._id}`;
   const eateryLink = `/eateries/my/${eatery._id}`;
 
   return (
     <div className="myEateries">
-      <NavLink to={eateryLink}>{eatery.businessName}</NavLink>
-      <NavLink to={manageEateryLink}>apply</NavLink>
+      <Link to={eateryLink}>{eatery.businessName}</Link>
+      <Link to={manageEateryLink}>review</Link>
     </div>
   );
 };
 
-export default MyEatery;
+export default MyEateryReview;

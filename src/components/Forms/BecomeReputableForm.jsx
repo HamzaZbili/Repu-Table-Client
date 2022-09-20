@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import useAuth from "../../context/auth/useAuth";
 import service from "../../services/apiHandler";
+import BackButton from "../Navbar/BackButton";
 import "./becomeReputableForm.css";
 
 const BecomeReputable = () => {
   const { id } = useParams();
-  const { currentUser } = useAuth();
   const [formData, setFormData] = useState({
     proofOfLivingWage: "",
     declaration: false,
@@ -15,7 +14,16 @@ const BecomeReputable = () => {
   });
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
+  const [eatery, setEatery] = useState({});
   const navigate = useNavigate();
+
+  useEffect(() => {
+    try {
+      service
+        .get(`/eateries/my/${id}`)
+        .then((response) => setEatery(response.data));
+    } catch (error) {}
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,6 +43,14 @@ const BecomeReputable = () => {
   };
   return (
     <>
+      <BackButton />
+      <div>
+        <p>
+          Your application has been reviewand a moderator has left the following
+          message:
+        </p>
+        {eatery ? <p>{eatery.moderatorNotes}</p> : ""}
+      </div>
       {error && <h3 className="error">{error.message}</h3>}
       <form onSubmit={handleSubmit}>
         <h4>become reputable</h4>
