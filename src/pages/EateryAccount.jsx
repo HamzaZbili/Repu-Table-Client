@@ -41,7 +41,7 @@ const EateryAccount = () => {
           <div>
             <h3>reputable eateries</h3>
             {reputableEateries.map((eatery) => {
-              return <MyEateryApply eatery={eatery} key={eatery._id} />;
+              return <MyEateryView eatery={eatery} key={eatery._id} />;
             })}
           </div>
         ) : (
@@ -83,7 +83,7 @@ const EateryAccount = () => {
           <div>
             <h3>yet to apply</h3>
             {yetToApplyEateries.map((eatery) => {
-              return <MyEateryView eatery={eatery} key={eatery._id} />;
+              return <MyEateryApply eatery={eatery} key={eatery._id} />;
             })}
           </div>
         ) : (

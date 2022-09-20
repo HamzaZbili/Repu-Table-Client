@@ -45,11 +45,17 @@ const BecomeReputable = () => {
     <>
       <BackButton />
       <div>
-        <p>
-          Your application has been reviewand a moderator has left the following
-          message:
-        </p>
-        {eatery ? <p>{eatery.moderatorNotes}</p> : ""}
+        {eatery.moderatorNotes ? (
+          <div>
+            <p>
+              Your application has been reviewand a moderator has left the
+              following message:
+            </p>
+            <p>{eatery.moderatorNotes}</p>
+          </div>
+        ) : (
+          ""
+        )}
       </div>
       {error && <h3 className="error">{error.message}</h3>}
       <form onSubmit={handleSubmit}>
