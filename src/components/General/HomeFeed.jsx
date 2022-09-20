@@ -12,18 +12,36 @@ const HomeFeed = () => {
       setAllEateries(response.data);
     });
   }, []);
+
   return (
     <>
-      <SearchEateries setSearchQuery={setSearchQuery} searchQuery={searchQuery}>
-        {allEateries.map((eatery) => {
-          const eateryLink = `/eateries/${eatery._id}`;
-          return (
-            <Link to={eateryLink} key={eatery._id}>
-              <EateryCard eatery={eatery} />
-            </Link>
-          );
-        })}
-      </SearchEateries>
+      <SearchEateries
+        setSearchQuery={setSearchQuery}
+        searchQuery={searchQuery}
+      />
+      {searchQuery
+        ? allEateries
+            .filter((eatery) => {
+              eatery.cuisine.forEach((cuisine) => {
+                // console.log(cuisine);
+                console.log(searchQuery);
+                cuisine.toLowerCase().includes(searchQuery.toLowerCase());
+              });
+            })
+            .map((eatery) => {
+              return (
+                <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
+                  <EateryCard eatery={eatery} />
+                </Link>
+              );
+            })
+        : allEateries.map((eatery) => {
+            return (
+              <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
+                <EateryCard eatery={eatery} />
+              </Link>
+            );
+          })}
     </>
   );
 };

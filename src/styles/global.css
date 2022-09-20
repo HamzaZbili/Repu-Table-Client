@@ -12,7 +12,7 @@ html {
 }
 
 body {
-	background-color: #eaeaea;;
+	background: linear-gradient(153deg, rgba(234,234,234,1) 81%, rgba(255,101,196,1) 81%);
 }
 
 a {

@@ -1,20 +1,20 @@
-import React from 'react'
-import { Input } from 'antd'
-import '../Navbar/navbar.css'
+import React from "react";
+import { Input } from "antd";
+import "../Navbar/navbar.css";
 
-const SearchEateries = ({searchQuery, setSearchQuery}) => {
+const SearchEateries = ({ searchQuery, setSearchQuery }) => {
   return (
     <>
-    {/* <Divider>Search</Divider> */}
-    <Input
-      className='searchBar'
-      value={searchQuery}
-      placeholder="search by cuisine"
-      type="text"
-      onChange={(e) => setSearchQuery(e.target.value.toLocaleLowerCase())}
-    />
-  </>
-  )
-}
+      {/* <Divider>Search</Divider> */}
+      <Input
+        className="searchBar"
+        value={searchQuery}
+        placeholder="search by cuisine"
+        type="text"
+        onChange={(e) => setSearchQuery(e.target.value.toLocaleLowerCase())}
+      />
+    </>
+  );
+};
 
-export default SearchEateries
+export default SearchEateries;
