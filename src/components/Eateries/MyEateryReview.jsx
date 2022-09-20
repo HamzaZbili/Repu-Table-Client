@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import DeleteEatery from "../Forms/DeleteEatery";
 import "./myEateries.css";
 
 const MyEateryReview = ({ eatery }) => {
@@ -9,6 +10,7 @@ const MyEateryReview = ({ eatery }) => {
   return (
     <div className="myEateries">
       <Link to={eateryLink}>{eatery.businessName}</Link>
+      <DeleteEatery id={eatery._id} />
       <Link to={manageEateryLink}>review</Link>
     </div>
   );
