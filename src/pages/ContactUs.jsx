@@ -1,9 +1,11 @@
 import React from "react";
+import BackButton from "../components/Navbar/BackButton";
 import "./contactUs.css";
 
 const ContactUs = () => {
   return (
     <div className="contactUs">
+      <BackButton />
       <h3 className="contactTitle">contact us</h3>
       <div className="whiteBox">
         <p>

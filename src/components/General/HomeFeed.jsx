@@ -19,21 +19,17 @@ const HomeFeed = () => {
         setSearchQuery={setSearchQuery}
         searchQuery={searchQuery}
       />
-      {searchQuery
-        ? allEateries.map((eatery) => {
-            return (
-              <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
-                <EateryCard eatery={eatery} />
-              </Link>
-            );
-          })
-        : allEateries.map((eatery) => {
-            return (
-              <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
-                <EateryCard eatery={eatery} />
-              </Link>
-            );
-          })}
+      {allEateries
+        .filter((eatery) =>
+          eatery.businessName.toLowerCase().includes(searchQuery.toLowerCase())
+        )
+        .map((eatery) => {
+          return (
+            <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
+              <EateryCard eatery={eatery} />
+            </Link>
+          );
+        })}
     </>
   );
 };

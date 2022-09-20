@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import BackButton from "../components/Navbar/BackButton";
 
 const Guidelines = () => {
   return (
-    <div>Our ethos</div>
-  )
-}
+    <>
+      <BackButton />
+      <div>Our ethos</div>
+    </>
+  );
+};
 
-export default Guidelines
+export default Guidelines;

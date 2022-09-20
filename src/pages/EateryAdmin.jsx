@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import BackButton from "../components/Navbar/BackButton";
 import service from "../services/apiHandler";
 import PendingApplications from "./PendingApplications";
 
@@ -16,6 +17,7 @@ const EateryAdmin = () => {
   }, []);
   return (
     <>
+      <BackButton />
       <h2>pending applications</h2>
       <div>
         {pendingApplications.map((eatery) => {
