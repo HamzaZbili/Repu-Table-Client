@@ -44,7 +44,7 @@ const fields = [
   {
     label: "tel number",
     fieldName: "phoneNumber",
-    type: "number",
+    type: "text",
     placeholder: "07123456789",
   },
 ];
@@ -60,10 +60,15 @@ const PostNewEatery = () => {
     email: "",
     phoneNumber: 0,
   });
-
+  const [file, setFile] = useState(null);
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
+      const data = new FormData();
+      for (const key in formData) {
+        data.append(key, formData[key]);
+      }
+      data.append("image", file);
       const newEatery = await service
         .post(`/eateries/my/new`, formData)
         .then((response) => console.log(response.data));
@@ -88,6 +93,19 @@ const PostNewEatery = () => {
             </div>
           );
         })}
+        <p>attach image</p>
+        <input
+          onChange={(e) => {
+            setFormData({ ...formData, [e.target.name]: e.target.value });
+            setFile(e.target.files[0]);
+          }}
+          value={formData.proofOfLivingWage}
+          type="file"
+          id="photo"
+          name="photo"
+          accept="png jpeg"
+          required
+        />
         <input type="submit" value="post new eatery" />
       </form>
     </>
