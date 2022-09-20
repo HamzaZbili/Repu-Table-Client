@@ -8,7 +8,7 @@ import Users from "../components/Users/Users";
 import service from "../services/apiHandler";
 
 const UserAdmin = () => {
-  const [allUsers, setAllUsers] = useState();
+  const [allUsers, setAllUsers] = useState([]);
 
   useEffect(() => {
     try {
@@ -20,14 +20,20 @@ const UserAdmin = () => {
     }
   }, []);
 
+  if (!allUsers.length) return <div>Loading !</div>;
+
+  const supers = allUsers.filter((user) => user.role === "super");
+  const moderators = allUsers.filter((user) => user.role === "moderator");
+  const users = allUsers.filter((user) => user.role === "user");
+
   return (
     <>
       <h4>supers</h4>
-      <Supers users={allUsers} />
+      <Supers supers={supers} />
       <h4>moderators</h4>
-      <Moderators users={allUsers} />
+      <Moderators moderators={moderators} />
       <h4>users</h4>
-      <Users users={allUsers} />
+      <Users users={users} />
     </>
   );
 };
