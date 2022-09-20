@@ -13,6 +13,8 @@ import BecomeReputableForm from "./components/Forms/BecomeReputableForm";
 import EateryDetailedOwner from "./components/Eateries/EateryDetailedOwner";
 import EateryAdmin from "./pages/EateryAdmin";
 import EateryAccount from "./pages/EateryAccount";
+import UserAdmin from "./pages/UserAdmin";
+import SingleUser from "./components/Users/SingleUser";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/eateries/:id" element={<EateryDetailed />} />
           <Route element={<PrivateRoute />}>
+            <Route path="/mod/users" element={<UserAdmin />} />
+            <Route path="/mod/users/:id" element={<SingleUser />} />
             <Route path="/eateries/my/:id" element={<EateryDetailedOwner />} />
             <Route
               path="/eateries/join/:id"

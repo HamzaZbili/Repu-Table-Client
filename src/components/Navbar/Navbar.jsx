@@ -33,7 +33,7 @@ const Navbar = () => {
                     users
                   </NavLink>
                   <NavLink to="/mod/eateries" onClick={toggleNavbar}>
-                    wannaBes
+                    pending
                   </NavLink>
                 </>
               ) : currentUser.role === "moderator" ? (
