@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
 import BackButton from "../Navbar/BackButton";
 import Input from "./Input";
@@ -21,13 +21,13 @@ const fields = [
     label: "cuisine",
     fieldName: "cuisine",
     type: "text",
-    placeholder: "cuisine",
+    placeholder: "Italian",
   },
   {
     label: "description",
     fieldName: "description",
     type: "text",
-    placeholder: "description",
+    placeholder: "steak house",
   },
   {
     label: "website",
@@ -61,6 +61,7 @@ const PostNewEatery = () => {
     phoneNumber: 0,
   });
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -71,7 +72,8 @@ const PostNewEatery = () => {
       data.append("image", file);
       const newEatery = await service
         .post(`/eateries/my/new`, formData)
-        .then((response) => console.log(response.data));
+        .then((response) => console.log(response.data))
+        .then(navigate("/eateries/my"));
     } catch (error) {
       console.log(error.message);
     }
