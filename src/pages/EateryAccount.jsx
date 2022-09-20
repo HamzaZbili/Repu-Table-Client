@@ -90,6 +90,7 @@ const EateryAccount = () => {
           ""
         )}
       </div>
+      <Link to="/eateries/my/new">post a new eatery</Link>
     </div>
   );
 };

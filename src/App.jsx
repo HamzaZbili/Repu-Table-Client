@@ -15,6 +15,7 @@ import EateryAdmin from "./pages/EateryAdmin";
 import EateryAccount from "./pages/EateryAccount";
 import UserAdmin from "./pages/UserAdmin";
 import SingleUser from "./components/Users/SingleUser";
+import PostNewEatery from "./components/Forms/PostNewEatery";
 
 function App() {
   return (
@@ -37,7 +38,8 @@ function App() {
               element={<BecomeReputableForm />}
             />
             <Route path="/mod/eateries" element={<EateryAdmin />} />
-            <Route path="/my/eateries" element={<EateryAccount />} />
+            <Route path="/eateries/my" element={<EateryAccount />} />
+            <Route path="/eateries/my/new" element={<PostNewEatery />} />
           </Route>
         </Route>
         <Route path="*" element={<Oops />} />

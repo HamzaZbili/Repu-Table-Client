@@ -41,7 +41,7 @@ const Navbar = () => {
                   pending
                 </NavLink>
               ) : currentUser.role === "eateryAccount" ? (
-                <NavLink to="/my/eateries" onClick={toggleNavbar}>
+                <NavLink to="/eateries/my" onClick={toggleNavbar}>
                   my eateries
                 </NavLink>
               ) : (

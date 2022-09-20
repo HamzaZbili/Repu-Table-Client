@@ -1,5 +1,6 @@
 import React from "react";
-import ReputableApplicationForm from "../components/Forms/ReputableApplicationForm";
+import ReputableModeratorForm from "../components/Forms/ReputableModeratorForm";
+import ReputableApplicationForm from "../components/Forms/ReputableModeratorForm";
 import "./PendingApplications.css";
 
 const PendingApplications = ({ eatery }) => {
@@ -17,7 +18,7 @@ const PendingApplications = ({ eatery }) => {
         {website}
       </p>
       <img src={proofOfLivingWage} alt="proof of livingwage" />
-      <ReputableApplicationForm eatery={eatery} />
+      <ReputableModeratorForm eatery={eatery} />
     </div>
   );
 };

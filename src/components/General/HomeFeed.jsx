@@ -21,7 +21,7 @@ const HomeFeed = () => {
       />
       {allEateries
         .filter((eatery) =>
-          eatery.businessName.toLowerCase().includes(searchQuery.toLowerCase())
+          eatery.businessName.toLowerCase().includes(searchQuery)
         )
         .map((eatery) => {
           return (

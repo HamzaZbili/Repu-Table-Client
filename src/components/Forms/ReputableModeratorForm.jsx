@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import service from "../../services/apiHandler";
 
-const ReputableApplicationForm = ({ eatery }) => {
+const ReputableModeratorForm = ({ eatery }) => {
   const [formData, setFormData] = useState({
     moderatorNotes: "",
     applicationOutcome: "",
@@ -50,4 +50,4 @@ const ReputableApplicationForm = ({ eatery }) => {
   );
 };
 
-export default ReputableApplicationForm;
+export default ReputableModeratorForm;

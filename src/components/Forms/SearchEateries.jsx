@@ -5,11 +5,10 @@ import "../Navbar/navbar.css";
 const SearchEateries = ({ searchQuery, setSearchQuery }) => {
   return (
     <>
-      {/* <Divider>Search</Divider> */}
       <Input
         className="searchBar"
         value={searchQuery}
-        placeholder="search by cuisine"
+        placeholder="search by eatery name"
         type="text"
         onChange={(e) => setSearchQuery(e.target.value.toLocaleLowerCase())}
       />

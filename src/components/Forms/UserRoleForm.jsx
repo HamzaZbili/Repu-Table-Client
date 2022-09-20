@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import service from "../../services/apiHandler";
 
 const UserRoleForm = () => {
-  console.log(`on the right page`);
   const { id } = useParams();
   const [formData, setFormData] = useState({ _id: id, role: "" });
 
