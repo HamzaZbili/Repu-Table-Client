@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyEateryApply from "../components/Eateries/MyEateryApply";
 import MyEateryReview from "../components/Eateries/MyEateryReview";
+import MyEateryView from "../components/Eateries/MyEateryView";
 import BackButton from "../components/Navbar/BackButton";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
@@ -70,7 +71,7 @@ const EateryAccount = () => {
           <div>
             <h3>application sent</h3>
             {pendingEateries.map((eatery) => {
-              return <MyEateryApply eatery={eatery} key={eatery._id} />;
+              return <MyEateryView eatery={eatery} key={eatery._id} />;
             })}
           </div>
         ) : (
@@ -82,7 +83,7 @@ const EateryAccount = () => {
           <div>
             <h3>yet to apply</h3>
             {yetToApplyEateries.map((eatery) => {
-              return <MyEateryApply eatery={eatery} key={eatery._id} />;
+              return <MyEateryView eatery={eatery} key={eatery._id} />;
             })}
           </div>
         ) : (
