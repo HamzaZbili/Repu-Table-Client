@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
 
 const FormSignUp = () => {
@@ -55,6 +55,18 @@ const FormSignUp = () => {
           id="password"
           name="password"
         />
+        <label htmlFor="role">eatery owner?</label>
+        <select
+          name="role"
+          id="role"
+          onChange={(e) =>
+            setFormData({ ...formData, [e.target.name]: e.target.value })
+          }
+          required
+        >
+          <option value="user">no</option>
+          <option value="eateryAccount">yes</option>
+        </select>
         <button>Submit</button>
       </form>
     </>
