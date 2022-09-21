@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
 
 const ReputableModeratorForm = ({ eatery }) => {
@@ -39,6 +40,7 @@ const ReputableModeratorForm = ({ eatery }) => {
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
         }
+        required
       >
         <option value="">select application outcome</option>
         <option value="repu-table">accept</option>

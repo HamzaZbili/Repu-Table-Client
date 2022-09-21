@@ -17,7 +17,13 @@ const EateryAccount = () => {
     });
   }, []);
 
-  if (!userEateries.length) return <div>loading...</div>;
+  if (!userEateries.length)
+    return (
+      <div className="accountContainer">
+        <BackButton />
+        <Link to="/eateries/my/new">post a new eatery</Link>
+      </div>
+    );
 
   const reviewEateries = userEateries.filter(
     (eatery) => eatery.isReputable === "review"
