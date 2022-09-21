@@ -30,19 +30,19 @@ const Navbar = () => {
               {currentUser.role === "super" ? (
                 <>
                   <NavLink to="/mod/users" onClick={toggleNavbar}>
-                    users
+                    <div>users</div>
                   </NavLink>
                   <NavLink to="/mod/eateries" onClick={toggleNavbar}>
-                    pending
+                    <div>pending</div>
                   </NavLink>
                 </>
               ) : currentUser.role === "moderator" ? (
                 <NavLink to="/mod/eateries" onClick={toggleNavbar}>
-                  pending
+                  <div>pending</div>
                 </NavLink>
               ) : currentUser.role === "eateryAccount" ? (
                 <NavLink to="/eateries/my" onClick={toggleNavbar}>
-                  my eateries
+                  <div>my eateries</div>
                 </NavLink>
               ) : (
                 <></>
@@ -57,16 +57,15 @@ const Navbar = () => {
             <NavLink to="/eateries" onClick={toggleNavbar}>
               <div onClick={removeUser}>logout</div>
             </NavLink>
-            <div></div>
           </>
         )}
         {!isLoggedIn && (
           <>
             <NavLink to="/signin" onClick={toggleNavbar}>
-              login
+              <div>login</div>
             </NavLink>
             <NavLink to="/signup" onClick={toggleNavbar}>
-              sign up
+              <div>sign up</div>
             </NavLink>
           </>
         )}

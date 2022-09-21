@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import service from "../../services/apiHandler";
 import BackButton from "../Navbar/BackButton";
 import "./eateryCard.css";
+import "./eateryDetailed.css";
+import Reviews from "./Reviews";
 
 const EateryDetailed = () => {
   const [eateryDetailed, setEateryDetailed] = useState({});
@@ -23,7 +25,10 @@ const EateryDetailed = () => {
       <BackButton />
       <img src={photo} alt="eatery image" />
       <h2>{businessName}</h2>
-      <p>{description}</p>
+      <div className="description">{description}</div>
+      <div>
+        <Reviews />
+      </div>
     </div>
   );
 };
