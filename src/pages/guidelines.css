@@ -1,0 +1,28 @@
+.guidelines {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2rem 0 2rem;
+}
+.guidelines h3 {
+    text-align: right;
+    padding-right: 3rem;
+    position: relative;
+    top: 1.7rem;
+    z-index: 1;
+}
+
+.guidelines h4 {
+    text-align: right;
+    padding-right: 3.4rem;
+    position: relative;
+    top: 1.7rem;
+    z-index: 1;
+}
+
+
+.whiteBox {
+    background-color: white;
+    margin: 1rem;
+    padding: .5rem;
+    border-radius: 20px;
+}

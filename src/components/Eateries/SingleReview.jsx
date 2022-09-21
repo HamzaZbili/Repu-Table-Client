@@ -4,12 +4,11 @@ import "./reviews.css";
 const SingleReview = ({ review }) => {
   return (
     <div className="singleReview">
-      {review.author.username}
-      <br />
-      {review.rating}
-      <br />
-      {review.content}
-      <br />
+      <div className="reviewTitle">
+        <h5>{review.author.username}</h5>
+        <h5>{review.rating}</h5>
+      </div>
+      <div className="reviewContent">{review.content}</div>
     </div>
   );
 };

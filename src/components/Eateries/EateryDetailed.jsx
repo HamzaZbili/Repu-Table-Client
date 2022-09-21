@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import service from "../../services/apiHandler";
 import BackButton from "../Navbar/BackButton";
 import "./eateryCard.css";
-import "./eateryDetailed.css";
 import Reviews from "./Reviews";
 
 const EateryDetailed = () => {
@@ -19,13 +18,31 @@ const EateryDetailed = () => {
       console.log(error);
     }
   }, []);
-  const { businessName, photo, description } = eateryDetailed;
+  const {
+    businessName,
+    photo,
+    description,
+    address,
+    email,
+    phoneNumber,
+    website,
+  } = eateryDetailed;
   return (
     <div className="eateryContainer">
       <BackButton />
       <img src={photo} alt="eatery image" />
-      <h2>{businessName}</h2>
-      <div className="description">{description}</div>
+      <div className="detailContainer">
+        <div className="description">
+          <h3>{businessName}</h3>
+          {description}
+        </div>
+        <div className="eateryContactDetails">
+          <p>{address}</p>
+          <p>{website}</p>
+          <p>{phoneNumber}</p>
+          <p>{email}</p>
+        </div>
+      </div>
       <div>
         <Reviews />
       </div>
