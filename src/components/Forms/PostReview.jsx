@@ -20,7 +20,7 @@ const fields = [
   },
 ];
 
-const PostReview = () => {
+const PostReview = ({ updateReviewsList }) => {
   const [formData, setFormData] = useState({
     rating: 0,
     content: "",
@@ -30,13 +30,21 @@ const PostReview = () => {
 
   const navigate = useNavigate();
 
+  const resetForm = () => {
+    setFormData({
+      rating: 0,
+      content: "",
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await service.post(`/eateries/reviews/${id}`, formData);
-      navigate("/eateries");
+      updateReviewsList();
+      resetForm();
     } catch (error) {
-      setError(e.message).then(console.log(error));
+      setError(e.message);
     }
   };
 

@@ -1,4 +1,10 @@
 .reviews {
-    background-color: blue;
-    height:10rem;
+    
+}
+
+.singleReview {
+    background-color: white;
+    color: #ff65c4;
+    border-radius: 30px;
+    padding: 1rem;
 }
