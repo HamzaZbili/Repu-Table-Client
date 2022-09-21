@@ -1,46 +1,29 @@
 import React, { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
+import { useParams } from "react-router-dom";
 import service from "../../services/apiHandler";
-import Input from "./Input";
-
-const fields = [
-  {
-    label: "rating",
-    fieldName: "rating",
-    type: "number",
-    placeholder: "rating",
-    min: 0,
-    max: 5,
-  },
-  {
-    label: "content",
-    fieldName: "content",
-    type: "text",
-    placeholder: "I think...",
-  },
-];
 
 const PostReview = ({ updateReviewsList }) => {
   const [formData, setFormData] = useState({
-    rating: 0,
     content: "",
+    rating: 0,
   });
+
   const [error, setError] = useState(null);
   const { id } = useParams();
 
-  const resetForm = () => {
-    setFormData({
-      rating: 0,
-      content: "",
-    });
-  };
+  // const resetForm = () => {
+  //   setRating(0);
+  //   setContent("");
+  //   setIsContentFieldOpen(false);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await service.post(`/eateries/reviews/${id}`, formData);
       updateReviewsList();
-      resetForm();
+      setFormData("");
     } catch (error) {
       setError(e.message);
     }
@@ -48,18 +31,26 @@ const PostReview = ({ updateReviewsList }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      {fields.map((fieldInfo, key) => {
-        return (
-          <div key={key}>
-            <Input
-              {...fieldInfo}
-              key={key}
-              formData={formData}
-              setFormData={setFormData}
-            />
-          </div>
-        );
-      })}
+      <h2>leave review</h2>
+      <input
+        type="text"
+        id="content"
+        name="content"
+        onChange={(e) =>
+          setFormData({ ...formData, [e.target.name]: e.target.value })
+        }
+        value={formData.content}
+      />
+      <ReactStars
+        count={5}
+        value={formData.name}
+        onChange={(e) => {
+          console.log(e);
+          setFormData({ ...formData, rating: e });
+        }}
+        size={24}
+        activeColor="#00d7ff"
+      />
       <input type="submit" value="post review" />
     </form>
   );

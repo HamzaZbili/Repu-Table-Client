@@ -44,6 +44,18 @@ const Navbar = () => {
                 <NavLink to="/eateries/my" onClick={toggleNavbar}>
                   <div>my eateries</div>
                 </NavLink>
+              ) : currentUser.role === "user" ? (
+                <>
+                  <NavLink to="/eateries/my" onClick={toggleNavbar}>
+                    <div>join us!</div>
+                  </NavLink>
+                  <NavLink
+                    to={`/eateries/reviews/my/${currentUser._id}`}
+                    onClick={toggleNavbar}
+                  >
+                    <div>my reviews</div>
+                  </NavLink>
+                </>
               ) : (
                 <></>
               )}

@@ -40,7 +40,7 @@ h1 {
 	color: var(--textColor);
 }
 
-h6 {
+/* h6 {
 	margin: 0;
 	padding: 0;
 	text-align: center;
@@ -48,7 +48,7 @@ h6 {
 	top: -1rem;
 	left: 2rem;
 	background-color: transparent;
-}
+} */
 
 .searchBar {
 	background-color: rgb(160, 160, 160);
@@ -112,6 +112,8 @@ nav {
 		transition: 1s;
 		transform: translateY(-100vh);
 		border-radius: 0px 0px 0px 50px;
+		z-index: 2;
+
 	}
 
 	header .responsive_nav {

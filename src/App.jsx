@@ -16,6 +16,7 @@ import EateryAccount from "./pages/EateryAccount";
 import UserAdmin from "./pages/UserAdmin";
 import SingleUser from "./components/Users/SingleUser";
 import PostNewEatery from "./components/Forms/PostNewEatery";
+import MyReviews from "./pages/MyReviews";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
             <Route path="/mod/eateries" element={<EateryAdmin />} />
             <Route path="/eateries/my" element={<EateryAccount />} />
             <Route path="/eateries/my/new" element={<PostNewEatery />} />
+            <Route path="/eateries/reviews/my/:id" element={<MyReviews />} />
           </Route>
         </Route>
         <Route path="*" element={<Oops />} />
