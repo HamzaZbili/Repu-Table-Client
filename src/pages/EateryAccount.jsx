@@ -1,9 +1,7 @@
 import React, { useCallback, useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import MyEateryApply from "../components/Eateries/MyEateryApply";
 import MyEateryReview from "../components/Eateries/MyEateryReview";
-import MyEateryView from "../components/Eateries/MyEateryView";
 import BackButton from "../components/Navbar/BackButton";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
@@ -16,7 +14,7 @@ const EateryAccount = () => {
     service.get("/eateries/my/all").then((response) => {
       setUserEateries(response.data);
     });
-  });
+  }, []);
   useEffect(() => {
     updateEateries();
   }, [updateEateries]);
@@ -45,23 +43,22 @@ const EateryAccount = () => {
   return (
     <div className="accountContainer">
       <BackButton />
-      {currentUser ? <h5>Hi {currentUser.username}!</h5> : <></>}
+      {currentUser && <h5>Hi {currentUser.username}!</h5>}
       <div>
-        {reputableEateries.length > 0 ? (
+        {reputableEateries.length > 0 && (
           <div>
             <h3>reputable eateries</h3>
             {reputableEateries.map((eatery) => {
               return (
-                <MyEateryView
+                <MyEateryReview
                   updateEateries={updateEateries}
                   eatery={eatery}
                   key={eatery._id}
+                  hasManageLink={false}
                 />
               );
             })}
           </div>
-        ) : (
-          ""
         )}
       </div>
       <div>
@@ -89,7 +86,7 @@ const EateryAccount = () => {
             <h3>application sent</h3>
             {pendingEateries.map((eatery) => {
               return (
-                <MyEateryView
+                <MyEateryReview
                   updateEateries={updateEateries}
                   eatery={eatery}
                   key={eatery._id}
@@ -107,10 +104,11 @@ const EateryAccount = () => {
             <h3>yet to apply</h3>
             {yetToApplyEateries.map((eatery) => {
               return (
-                <MyEateryApply
+                <MyEateryReview
                   updateEateries={updateEateries}
                   eatery={eatery}
                   key={eatery._id}
+                  text={"apply"}
                 />
               );
             })}

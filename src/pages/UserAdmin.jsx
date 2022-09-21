@@ -28,11 +28,11 @@ const UserAdmin = () => {
 
   return (
     <>
-      <h4>supers</h4>
+      <h4 className="userTitles">supers</h4>
       <Supers supers={supers} />
-      <h4>moderators</h4>
+      <h4 className="userTitles">moderators</h4>
       <Moderators moderators={moderators} />
-      <h4>users</h4>
+      <h4 className="userTitles">users</h4>
       <Users users={users} />
     </>
   );
