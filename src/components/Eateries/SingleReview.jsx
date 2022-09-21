@@ -1,7 +1,7 @@
 import React from "react";
 import "./reviews.css";
 
-const SingleReview = ({ review, setAllReviews }) => {
+const SingleReview = ({ review }) => {
   return (
     <div className="singleReview">
       {review.author.username}

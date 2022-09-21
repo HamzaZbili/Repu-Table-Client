@@ -28,8 +28,6 @@ const PostReview = ({ updateReviewsList }) => {
   const [error, setError] = useState(null);
   const { id } = useParams();
 
-  const navigate = useNavigate();
-
   const resetForm = () => {
     setFormData({
       rating: 0,

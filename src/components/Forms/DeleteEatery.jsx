@@ -9,7 +9,7 @@ const DeleteEatery = ({ id }) => {
     try {
       service
         .delete(`/eateries/my/delete/${id}`)
-        .then(navigate("/eateries/my/all"));
+        .then(navigate("/eateries/my"));
     } catch (error) {
       console.log(error.message);
     }

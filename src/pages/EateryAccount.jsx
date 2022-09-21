@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import MyEateryApply from "../components/Eateries/MyEateryApply";
@@ -11,11 +11,15 @@ import service from "../services/apiHandler";
 const EateryAccount = () => {
   const { currentUser } = useAuth();
   const [userEateries, setUserEateries] = useState([]);
-  useEffect(() => {
+
+  const updateEateries = useCallback(() => {
     service.get("/eateries/my/all").then((response) => {
       setUserEateries(response.data);
     });
-  }, []);
+  });
+  useEffect(() => {
+    updateEateries();
+  }, [updateEateries]);
 
   if (!userEateries.length)
     return (
@@ -47,7 +51,13 @@ const EateryAccount = () => {
           <div>
             <h3>reputable eateries</h3>
             {reputableEateries.map((eatery) => {
-              return <MyEateryView eatery={eatery} key={eatery._id} />;
+              return (
+                <MyEateryView
+                  updateEateries={updateEateries}
+                  eatery={eatery}
+                  key={eatery._id}
+                />
+              );
             })}
           </div>
         ) : (
@@ -61,6 +71,7 @@ const EateryAccount = () => {
             {reviewEateries.map((eatery) => {
               return (
                 <MyEateryReview
+                  updateEateries={updateEateries}
                   eatery={eatery}
                   key={eatery._id}
                   moderatorMessage={eatery.moderatorMessage}
@@ -77,7 +88,13 @@ const EateryAccount = () => {
           <div>
             <h3>application sent</h3>
             {pendingEateries.map((eatery) => {
-              return <MyEateryView eatery={eatery} key={eatery._id} />;
+              return (
+                <MyEateryView
+                  updateEateries={updateEateries}
+                  eatery={eatery}
+                  key={eatery._id}
+                />
+              );
             })}
           </div>
         ) : (
@@ -89,7 +106,13 @@ const EateryAccount = () => {
           <div>
             <h3>yet to apply</h3>
             {yetToApplyEateries.map((eatery) => {
-              return <MyEateryApply eatery={eatery} key={eatery._id} />;
+              return (
+                <MyEateryApply
+                  updateEateries={updateEateries}
+                  eatery={eatery}
+                  key={eatery._id}
+                />
+              );
             })}
           </div>
         ) : (
