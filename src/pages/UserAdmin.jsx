@@ -1,10 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import Moderators from "../components/Users/Moderators";
-import Supers from "../components/Users/Supers";
+import BackButton from "../components/Navbar/BackButton";
 import Users from "../components/Users/Users";
-
 import service from "../services/apiHandler";
 
 const UserAdmin = () => {
@@ -22,18 +20,25 @@ const UserAdmin = () => {
 
   if (!allUsers.length) return <div>Loading !</div>;
 
-  const supers = allUsers.filter((user) => user.role === "super");
-  const moderators = allUsers.filter((user) => user.role === "moderator");
-  const users = allUsers.filter((user) => user.role === "user");
+  const userCollections = [
+    { label: "supers", status: "super" },
+    { label: "moderators", status: "moderator" },
+    { label: "eatery accounts", status: "eateryAccount" },
+    { label: "users", status: "user" },
+  ];
 
   return (
     <>
-      <h4 className="userTitles">supers</h4>
-      <Supers supers={supers} />
-      <h4 className="userTitles">moderators</h4>
-      <Moderators moderators={moderators} />
-      <h4 className="userTitles">users</h4>
-      <Users users={users} />
+      <BackButton />
+      {userCollections.map(({ label, status }) => {
+        return (
+          <Users
+            users={allUsers.filter((user) => user.role === status)}
+            label={label}
+            key={label}
+          />
+        );
+      })}
     </>
   );
 };

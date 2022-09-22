@@ -1,0 +1,24 @@
+.userTitles {
+    background-color: white;
+    color: #ff65c4;
+    padding-left: 2rem;
+}
+
+.userContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem .5rem 1rem;
+}
+
+.nameAndEmail {
+    color: rgb(82, 78, 78);
+}
+
+.manageUserButton {
+    height: 2rem;
+    background-color: white;
+    color: #3349a3;
+    margin-top: .5rem;
+    padding: .2rem 1rem 1rem 1rem;
+    border-radius: 30px;
+}

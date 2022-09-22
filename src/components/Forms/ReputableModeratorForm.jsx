@@ -2,22 +2,18 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
 
-const ReputableModeratorForm = ({ eatery }) => {
+const ReputableModeratorForm = ({ eatery, updatePendingApplications }) => {
   const [formData, setFormData] = useState({
     moderatorNotes: "",
     applicationOutcome: "",
   });
   const [error, setError] = useState(null);
 
-  function refreshPage() {
-    window.location.reload(false);
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await service.patch(`/mod/eateries/${eatery._id}`, formData);
-      refreshPage();
+      updatePendingApplications();
     } catch (error) {
       setError(error);
     }

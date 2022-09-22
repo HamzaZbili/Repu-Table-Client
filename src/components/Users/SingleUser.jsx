@@ -19,7 +19,7 @@ const SingleUser = () => {
     }
   }, []);
   return (
-    <>
+    <div>
       {user ? (
         <div>
           <h3>
@@ -32,7 +32,7 @@ const SingleUser = () => {
       ) : (
         ""
       )}
-    </>
+    </div>
   );
 };
 
