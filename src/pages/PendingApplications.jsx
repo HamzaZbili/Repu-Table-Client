@@ -15,16 +15,16 @@ const PendingApplications = ({ eatery, updatePendingApplications }) => {
   return (
     <div id="pendingApplicationsContainer">
       <h4>{businessName}</h4>
-      <p>
-        {address}
-        <br />
-        {phoneNumber}
-        <br />
-        {website}
-      </p>
+      <div className="applicantContactDetails">
+        <p>{address.split(",").join("\n")}</p>
+        <p>{phoneNumber}</p>
+        <p>{website}</p>
+      </div>
       {noteToUs && (
         <article>
-          The eatery owner has left the following message: {noteToUs}
+          <p>The eatery owner has left the following message:</p>
+          <br />
+          {noteToUs}
         </article>
       )}
       <img src={proofOfLivingWage} alt="proof of livingwage" />

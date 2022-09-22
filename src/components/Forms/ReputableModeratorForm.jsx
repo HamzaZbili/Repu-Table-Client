@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
+import "./reputableModeratorForm.css";
 
 const ReputableModeratorForm = ({ eatery, updatePendingApplications }) => {
   const [formData, setFormData] = useState({
@@ -20,11 +20,12 @@ const ReputableModeratorForm = ({ eatery, updatePendingApplications }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="reputableModeratorForm">
       <input
         type="text"
         id="moderatorNotes"
         name="moderatorNotes"
+        placeholder="moderator notes"
         value={formData.moderatorNotes}
         onChange={(e) =>
           setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -43,7 +44,11 @@ const ReputableModeratorForm = ({ eatery, updatePendingApplications }) => {
         <option value="review">send for review</option>
         <option value="false">reject</option>
       </select>
-      <input type="submit" value="send outcome" />
+      <input
+        type="submit"
+        value="send outcome"
+        id="reputableModeratorFormSubmitButton"
+      />
     </form>
   );
 };

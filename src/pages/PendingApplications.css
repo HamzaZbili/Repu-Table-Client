@@ -1,3 +1,32 @@
 #pendingApplicationsContainer {
     margin: 2rem;
+    padding-bottom: 5rem;
+}
+
+#pendingApplicationsContainer h4{
+    color: #ff65c4;
+    text-align: right;
+    padding-right: 2rem;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.applicantContactDetails {
+    margin: 1rem;
+    font-size: .8rem;
+    width: 12rem;
+    padding: .5rem 0 1rem .6rem;
+    background-color: white;
+    border-radius: 20px;
+    overflow-wrap: break-word;
+}
+
+#pendingApplicationsContainer article {
+    margin: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    padding: 1rem;
+}
+
+#pendingApplicationsContainer img{
+    border-radius: 20px;
 }
