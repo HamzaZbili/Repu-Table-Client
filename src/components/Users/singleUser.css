@@ -1,0 +1,13 @@
+.usenameAndRole {
+    background-color: white;
+    color: #3349a3;
+    text-align: center
+}
+.userProfile {
+    background-color: #3349a3;
+    color: white;
+    margin: 2rem 4rem 1rem 4rem;
+    padding: 1rem;
+    border-radius: 30px;
+    text-align: center;
+}

@@ -17,6 +17,7 @@ import UserAdmin from "./pages/UserAdmin";
 import SingleUser from "./components/Users/SingleUser";
 import PostNewEatery from "./components/Forms/PostNewEatery";
 import MyReviews from "./pages/MyReviews";
+import ModEateryView from "./components/Eateries/ModEateryView";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route element={<PrivateRoute />}>
             <Route path="/mod/users" element={<UserAdmin />} />
             <Route path="/mod/users/:id" element={<SingleUser />} />
+            <Route path="/mod/eateries/:id" element={<ModEateryView />} />
             <Route path="/eateries/my/:id" element={<EateryDetailedOwner />} />
             <Route
               path="/eateries/join/:id"
