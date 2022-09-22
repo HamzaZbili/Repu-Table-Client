@@ -12,12 +12,12 @@ const MyEateryLinks = ({
 }) => {
   return (
     <>
-      <h3>{label}</h3>
+      {eateries.length ? <h3>{label}</h3> : ""}
       <div className="myEateries">
         {eateries?.map((eatery) => {
           return (
             <div key={eatery._id}>
-              <Link to={`/eateries/join/${eatery._id}`}>
+              <Link to={`/eateries/my/${eatery._id}`}>
                 {eatery.businessName}
               </Link>
               <DeleteEatery id={eatery._id} updateEateries={updateEateries} />

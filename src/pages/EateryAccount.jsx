@@ -32,11 +32,11 @@ const EateryAccount = () => {
     {
       label: "please review",
       status: "review",
-      text: "review",
+      text: "ammend application",
       hasManageLink: false,
     },
     { label: "application sent", status: "pending" },
-    { label: "yet to apply", status: "false" },
+    { label: "yet to apply", status: "false", text: "apply" },
   ];
 
   return (
@@ -50,6 +50,7 @@ const EateryAccount = () => {
           )}
           updateEateries={updateEateries}
           {...collectionProps}
+          key={status}
         />
       ))}
       <Link to="/eateries/my/new">post a new eatery</Link>

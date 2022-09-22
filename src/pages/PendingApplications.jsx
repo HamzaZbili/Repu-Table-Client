@@ -3,7 +3,7 @@ import ReputableModeratorForm from "../components/Forms/ReputableModeratorForm";
 import ReputableApplicationForm from "../components/Forms/ReputableModeratorForm";
 import "./PendingApplications.css";
 
-const PendingApplications = ({ eatery }) => {
+const PendingApplications = ({ eatery, updatePendingApplications }) => {
   const {
     businessName,
     website,
@@ -27,7 +27,10 @@ const PendingApplications = ({ eatery }) => {
         The eatery owner has left the following message: {noteToUs}
       </article>
       <img src={proofOfLivingWage} alt="proof of livingwage" />
-      <ReputableModeratorForm eatery={eatery} />
+      <ReputableModeratorForm
+        eatery={eatery}
+        updatePendingApplications={updatePendingApplications}
+      />
     </div>
   );
 };

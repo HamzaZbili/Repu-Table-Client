@@ -6,7 +6,7 @@ const SingleReview = ({ review }) => {
     <div className="singleReview">
       <div className="reviewTitle">
         <h5>{review.author.username}</h5>
-        <h5>{review.rating}</h5>
+        <p>{review.rating}</p>
       </div>
       <div className="reviewContent">{review.content}</div>
     </div>
