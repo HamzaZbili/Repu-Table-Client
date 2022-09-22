@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
 import BackButton from "../Navbar/BackButton";
 import Input from "./Input";
+import "./postNewEatery.css";
 
 const fields = [
   {
@@ -82,7 +83,7 @@ const PostNewEatery = () => {
   return (
     <>
       <BackButton />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} id="postNewEateryForm">
         {fields.map((fieldInfo, key) => {
           return (
             <div key={key}>
@@ -108,7 +109,11 @@ const PostNewEatery = () => {
           accept="png jpeg"
           required
         />
-        <input type="submit" value="post new eatery" />
+        <input
+          type="submit"
+          value="post new eatery"
+          id="postNewEateryFormSubmitButton"
+        />
       </form>
     </>
   );
