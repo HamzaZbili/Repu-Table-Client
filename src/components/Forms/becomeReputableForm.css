@@ -58,6 +58,7 @@
 #becomeReputableSubmit {
     padding: 1rem;
     font-size: 1.1rem;
+    box-shadow: 2px 2px 2px grey;
 }
 #modNotes {
     width: 14rem;

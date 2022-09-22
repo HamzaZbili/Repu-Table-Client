@@ -4,7 +4,9 @@
     top: 2rem;
     padding: 1rem;
     color: white;
+    background-color: rgb(83, 158, 83);
     border-radius: 30px;
+    box-shadow: 4px 4px 4px grey;
 }
 
 .accountWelcomeMessage {

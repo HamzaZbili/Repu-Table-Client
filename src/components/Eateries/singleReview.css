@@ -1,0 +1,20 @@
+.singleReview {
+    background-color: white;
+    color: #3349a3;
+    border-radius: 30px;
+    padding: 1rem;
+    margin: .5rem;
+}
+
+.reviewTitle {
+    justify-content: space-between;
+    padding: 0 2rem 0 2rem;
+}
+.reviewTitle h5{
+   color: #ff65c4;
+}
+
+
+.reviewContent {
+
+}

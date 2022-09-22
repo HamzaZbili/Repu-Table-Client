@@ -7,6 +7,7 @@ import SearchEateries from "../Forms/SearchEateries";
 const HomeFeed = () => {
   const [allEateries, setAllEateries] = useState([]);
   const [searchQuery, setSearchQuery] = useState(``);
+
   useEffect(() => {
     service.get("/eateries").then((response) => {
       setAllEateries(response.data);

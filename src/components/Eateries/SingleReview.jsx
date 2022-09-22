@@ -1,12 +1,15 @@
 import React from "react";
-import "./reviews.css";
+import "./singleReview.css";
+import StarRating from "./StarRating";
 
 const SingleReview = ({ review }) => {
   return (
     <div className="singleReview">
       <div className="reviewTitle">
         <h5>{review.author.username}</h5>
-        <p>{review.rating}</p>
+        <div>
+          <StarRating>{review.rating}</StarRating>
+        </div>
       </div>
       <div className="reviewContent">{review.content}</div>
     </div>

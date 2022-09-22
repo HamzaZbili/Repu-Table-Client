@@ -27,12 +27,17 @@ const Reviews = () => {
     updateReviewsList();
   }, [updateReviewsList]);
 
+  let rating = 0;
+  allReviews?.forEach((review) => (rating += review.rating));
+  const average = rating / allReviews?.length;
   return (
     <>
       <PostReview updateReviewsList={updateReviewsList} />
       <div className="reviews">
         {allReviews?.map((review) => {
-          return <SingleReview key={review._id} review={review} />;
+          return (
+            <SingleReview key={review._id} review={review} average={average} />
+          );
         })}
       </div>
     </>
