@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
 import "./auth.css";
 
@@ -78,6 +78,12 @@ const FormSignUp = () => {
         </div>
         <button className="authButton">sign up</button>
       </form>
+      <div className="linkToAltAuth">
+        <p>already have an account?</p>
+        <p>
+          click <Link to="/signin">HERE</Link> to login
+        </p>
+      </div>
     </>
   );
 };

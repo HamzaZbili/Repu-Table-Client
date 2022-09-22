@@ -40,25 +40,27 @@ const EateryAccount = () => {
   ];
 
   return (
-    <div>
-      <BackButton />
-      {currentUser && (
-        <h3 className="accountWelcomeMessage">Hi {currentUser.username}!</h3>
-      )}
-      {eateryCollections.map(({ status, ...collectionProps }) => (
-        <ManageEateryLinks
-          eateries={userEateries.filter(
-            ({ isReputable }) => isReputable === status
-          )}
-          updateEateries={updateEateries}
-          {...collectionProps}
-          key={status}
-        />
-      ))}
+    <>
+      <div>
+        <BackButton />
+        {currentUser && (
+          <h3 className="accountWelcomeMessage">Hi {currentUser.username}!</h3>
+        )}
+        {eateryCollections.map(({ status, ...collectionProps }) => (
+          <ManageEateryLinks
+            eateries={userEateries.filter(
+              ({ isReputable }) => isReputable === status
+            )}
+            updateEateries={updateEateries}
+            {...collectionProps}
+            key={status}
+          />
+        ))}
+      </div>
       <Link className="postNewEateryLink" to="/eateries/my/new">
         post a new eatery
       </Link>
-    </div>
+    </>
   );
 };
 

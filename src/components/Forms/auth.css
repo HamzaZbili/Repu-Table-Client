@@ -52,5 +52,14 @@
     border-radius: 30px;
     font-size: 1.2rem;
     color: #505050;
+    box-shadow: 2px 2px 2px grey;
 }
 
+.linkToAltAuth {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 2.5rem;
+    align-items: center; 
+    color: #505050;
+}

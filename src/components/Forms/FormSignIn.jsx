@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import service from "../../services/apiHandler";
 import useAuth from "../../context/auth/useAuth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const FormSignIn = () => {
   const [user, setUser] = useState({
@@ -56,6 +56,12 @@ const FormSignIn = () => {
         <button className="authButton">sign in</button>
         {error && <h3 className="error">{error.message}</h3>}
       </form>
+      <div className="linkToAltAuth">
+        <p>don't have an account?</p>
+        <p>
+          click <Link to="/signup">HERE</Link> to sign up
+        </p>
+      </div>
     </>
   );
 };

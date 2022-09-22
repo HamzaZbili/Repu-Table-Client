@@ -30,7 +30,7 @@ const EateryDetailed = () => {
   return (
     <div className="eateryContainer">
       <BackButton />
-      <img src={photo} alt="eatery image" />
+      <img src={photo} alt="eatery image" id="eateryImage" />
       <div className="detailContainer">
         <div className="description">
           <h3>{businessName}</h3>

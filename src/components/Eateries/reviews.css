@@ -16,3 +16,41 @@
 .reviews {
     margin-bottom:2rem;
 }
+
+.postReview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.postReview h3{
+    color: rgb(79, 79, 79);
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+}
+#postReviewSubmitButton {
+    width: 8rem;
+    height: 2rem;
+    padding-left: 1.5rem;
+    padding-bottom: .3rem;
+    text-align: start;
+    background-color: white;
+    color: #3349a3;
+    box-shadow: 2px 2px 2px grey;
+}
+#content {
+    border: 0;
+    background-color: white;
+    width: 16rem;
+    height: 4rem;
+    text-align: start;
+}
+#starsContainer {
+    display: flex;
+    justify-content: center;
+    margin: .5rem;
+}
+#errorMessage {
+    text-align:center;
+    width: 15rem;
+}

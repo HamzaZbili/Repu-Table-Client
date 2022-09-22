@@ -9,13 +9,18 @@ import SingleReview from "./SingleReview";
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState();
+  const [error, setError] = useState();
   const { id } = useParams();
+
   const updateReviewsList = useCallback(() => {
     try {
       const reviews = service
         .get(`/eateries/reviews/${id}`)
         .then((response) => setAllReviews(response.data));
-    } catch (error) {}
+    } catch (error) {
+      setError(error.data.message);
+      console.log(error);
+    }
   }, []);
 
   useEffect(() => {
@@ -26,11 +31,9 @@ const Reviews = () => {
     <>
       <PostReview updateReviewsList={updateReviewsList} />
       <div className="reviews">
-        {allReviews
-          ? allReviews.map((review) => {
-              return <SingleReview key={review._id} review={review} />;
-            })
-          : ""}
+        {allReviews?.map((review) => {
+          return <SingleReview key={review._id} review={review} />;
+        })}
       </div>
     </>
   );

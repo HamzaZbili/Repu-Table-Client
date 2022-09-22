@@ -18,8 +18,10 @@ import SingleUser from "./components/Users/SingleUser";
 import PostNewEatery from "./components/Forms/PostNewEatery";
 import MyReviews from "./pages/MyReviews";
 import ModEateryView from "./components/Eateries/ModEateryView";
+import useAuth from "./context/auth/useAuth";
 
 function App() {
+  const { currentUser } = useAuth();
   return (
     <div className="App">
       <Routes>
@@ -31,6 +33,10 @@ function App() {
           <Route path="/guidelines" element={<Guidelines />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/eateries/:id" element={<EateryDetailed />} />
+          <Route
+            path={"/joinus"}
+            element={currentUser ? <EateryAccount /> : <Signin />}
+          />
           <Route element={<PrivateRoute />}>
             <Route path="/mod/users" element={<UserAdmin />} />
             <Route path="/mod/users/:id" element={<SingleUser />} />

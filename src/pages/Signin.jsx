@@ -1,7 +1,11 @@
 import FormSignIn from "../components/Forms/FormSignIn";
 
 const Signin = () => {
-	return <FormSignIn />;
+  return (
+    <>
+      <FormSignIn />
+    </>
+  );
 };
 
 export default Signin;

@@ -10,6 +10,8 @@
     padding-top: .5em;
     padding-bottom: .5em;
     height: 15rem;
+    background-position: center;
+    background-size: cover; 
 }
 
 .shortDetails{
@@ -53,6 +55,10 @@
     background-color: white;
     color: rgb(65, 104, 71);
     overflow:auto;
+}
+
+#eateryImage {
+    border-radius: 30px;
 }
 
 .eateryContactDetails {
