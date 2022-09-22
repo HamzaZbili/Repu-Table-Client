@@ -5,6 +5,7 @@ import ManageEateryLinks from "../components/Eateries/ManageEateryLinks";
 import BackButton from "../components/Navbar/BackButton";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
+import "./eateryAccount.css";
 
 const EateryAccount = () => {
   const { currentUser } = useAuth();
@@ -40,7 +41,7 @@ const EateryAccount = () => {
   ];
 
   return (
-    <div className="accountContainer">
+    <div>
       <BackButton />
       {currentUser && <h5>Hi {currentUser.username}!</h5>}
       {eateryCollections.map(({ status, ...collectionProps }) => (
@@ -53,7 +54,9 @@ const EateryAccount = () => {
           key={status}
         />
       ))}
-      <Link to="/eateries/my/new">post a new eatery</Link>
+      <Link className="postNewEateryLink" to="/eateries/my/new">
+        post a new eatery
+      </Link>
     </div>
   );
 };

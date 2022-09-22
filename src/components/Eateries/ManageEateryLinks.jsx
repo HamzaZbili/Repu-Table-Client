@@ -12,18 +12,25 @@ const MyEateryLinks = ({
 }) => {
   return (
     <>
-      {eateries.length ? <h3>{label}</h3> : ""}
-      <div className="myEateries">
+      {eateries.length ? <h3 className="eateryStatusTitles">{label}</h3> : ""}
+      <div className="eateryManageOwnerContainer">
         {eateries?.map((eatery) => {
           return (
-            <div key={eatery._id}>
+            <div key={eatery._id} className="eateryManageOwner">
               <Link to={`/eateries/my/${eatery._id}`}>
                 {eatery.businessName}
               </Link>
-              <DeleteEatery id={eatery._id} updateEateries={updateEateries} />
-              {hasManageLink && (
-                <Link to={`/eateries/join/${eatery._id}`}>{text}</Link>
-              )}
+              <div className="deleteAndManageButtons">
+                <DeleteEatery id={eatery._id} updateEateries={updateEateries} />
+                {hasManageLink && (
+                  <Link
+                    className="manageButton"
+                    to={`/eateries/join/${eatery._id}`}
+                  >
+                    {text}
+                  </Link>
+                )}
+              </div>
             </div>
           );
         })}

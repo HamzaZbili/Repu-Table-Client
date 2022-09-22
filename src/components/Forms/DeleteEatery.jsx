@@ -15,7 +15,11 @@ const DeleteEatery = ({ id, updateEateries }) => {
       console.log(error.message);
     }
   };
-  return <button onClick={handleClick}>delete</button>;
+  return (
+    <button className="deleteEateryButton" onClick={handleClick}>
+      delete
+    </button>
+  );
 };
 
 export default DeleteEatery;

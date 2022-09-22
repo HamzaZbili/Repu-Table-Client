@@ -23,8 +23,6 @@ const Navbar = () => {
       </div>
       <nav className="Navbar" ref={navRef}>
         <>
-          <p> </p>
-          <p> </p>
           {currentUser ? (
             <>
               {currentUser.role === "super" ? (

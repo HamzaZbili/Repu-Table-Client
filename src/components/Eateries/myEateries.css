@@ -1,8 +1,44 @@
-.myEateries {
+.eateryManageOwnerContainer {
     display: flex;
-    
-    justify-content: space-between;
+    flex-direction: column;
     padding: .5rem;
-    margin-right: 2rem;
-    margin-left: 2rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+.eateryManageOwner{
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 1rem .5rem 1rem;
+}
+.deleteEateryButton{
+    margin: 0 .5rem 0 .5rem;
+    border: 0;
+    background-color: rgb(184, 110, 110);
+    color: white;
+    padding: .5rem;
+    border-radius: 20px;
+}
+
+.manageButton {
+    margin: 0 0rem 0 .5rem;
+    border: 0;
+    background-color: rgb(99, 99, 156);
+    color: white;
+    padding: .5rem;
+    border-radius: 20px;
+}
+
+.deleteAndManageButtons {
+    width: 9rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eateryStatusTitles{
+    text-align: right;
+    padding-right: 5rem;
+    color: white;
+    background-color: rgb(114, 114, 114);
+    height: 1.9rem;
+
 }
