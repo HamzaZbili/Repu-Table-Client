@@ -29,7 +29,7 @@ const PostReview = ({ updateReviewsList }) => {
       }
       const res = await service.post(`/eateries/reviews/${id}`, formData);
       updateReviewsList();
-      setFormData("");
+      setFormData({ content: "", rating: 0 });
     } catch (error) {
       setError(error.response.data.message);
     }
