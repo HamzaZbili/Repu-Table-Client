@@ -7,3 +7,10 @@
     color: white;
     border-radius: 30px;
 }
+
+.accountWelcomeMessage {
+    padding-right: 2rem;
+    color: rgb(72, 66, 66);
+    font-size: 2rem;
+    text-align: end;
+}

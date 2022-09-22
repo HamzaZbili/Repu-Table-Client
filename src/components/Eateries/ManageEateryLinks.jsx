@@ -27,7 +27,7 @@ const MyEateryLinks = ({
                     className="manageButton"
                     to={`/eateries/join/${eatery._id}`}
                   >
-                    {text}
+                    {text && text}
                   </Link>
                 )}
               </div>

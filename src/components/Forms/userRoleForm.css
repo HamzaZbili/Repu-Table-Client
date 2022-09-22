@@ -28,4 +28,5 @@ input {
     padding: 0 2rem 0 2rem;
     background-color: aliceblue;
     color: rgb(65, 61, 61);
+    border: 0;
 }

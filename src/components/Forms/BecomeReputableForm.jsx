@@ -45,22 +45,20 @@ const BecomeReputable = () => {
     <>
       <BackButton />
       <div>
-        {eatery.moderatorNotes ? (
+        {eatery.moderatorNotes && (
           <div>
             <p>
-              Your application has been reviewand a moderator has left the
+              Your application has been review and a moderator has left the
               following message:
             </p>
             <p>{eatery.moderatorNotes}</p>
           </div>
-        ) : (
-          ""
         )}
       </div>
       {error && <h3 className="error">{error.message}</h3>}
       <form onSubmit={handleSubmit} className="becomeReputableForm">
-        <h4>become reputable</h4>
-        <label htmlFor="proofOfLivingWage">
+        <h2 id="becomeReputableApplicationFormTitle">become reputable</h2>
+        <label htmlFor="proofOfLivingWage" id="proofOfLivingWage">
           please attach proof that you are a living wage employer
         </label>
         <input
@@ -70,7 +68,7 @@ const BecomeReputable = () => {
           }}
           value={formData.proofOfLivingWage}
           type="file"
-          id="proofOfLivingWage"
+          id="proofOfLivingWageButton"
           name="proofOfLivingWage"
           accept="png jpeg"
           required
@@ -84,10 +82,12 @@ const BecomeReputable = () => {
           type="text"
           id="noteToUs"
           name="noteToUs"
+          maxLength="140"
         />
-        <label htmlFor="declaration">
-          Please tick the box below to declare all the information you have
-          provided is accurate.
+        <label htmlFor="declaration" id="declarationLabel">
+          Please tick the box below to confirm you have read and understood our
+          guidelines. In addition, you declare all the information you have
+          provided is accurate and up to date.
         </label>
         <input
           onChange={(e) =>
@@ -99,7 +99,11 @@ const BecomeReputable = () => {
           name="declaration"
           required
         />
-        <input type="submit" value="submit application" />
+        <input
+          type="submit"
+          value="submit application"
+          id="becomeReputableSubmit"
+        />
       </form>
     </>
   );

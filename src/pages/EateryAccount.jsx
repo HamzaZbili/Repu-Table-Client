@@ -29,21 +29,22 @@ const EateryAccount = () => {
     );
 
   const eateryCollections = [
-    { label: "reputable eateries", status: "repu-table" },
+    { label: "reputable eateries", status: "repu-table", hasManageLink: false },
     {
       label: "please review",
       status: "review",
-      text: "ammend application",
-      hasManageLink: false,
+      text: "ammend",
     },
-    { label: "application sent", status: "pending" },
+    { label: "application sent", status: "pending", text: "amend" },
     { label: "yet to apply", status: "false", text: "apply" },
   ];
 
   return (
     <div>
       <BackButton />
-      {currentUser && <h5>Hi {currentUser.username}!</h5>}
+      {currentUser && (
+        <h3 className="accountWelcomeMessage">Hi {currentUser.username}!</h3>
+      )}
       {eateryCollections.map(({ status, ...collectionProps }) => (
         <ManageEateryLinks
           eateries={userEateries.filter(

@@ -3,6 +3,59 @@
     flex-direction: column;
     align-items: center;
     width: 70vw;
-    padding-left: 3rem;
     font-size: .8rem;
+    margin-left: 3rem;
+}
+
+#proofOfLivingWage {
+    width: 12rem;
+    padding: 1rem;
+    background-color: transparent;
+    position: relative;
+    top: -.5rem;
+}
+
+#proofOfLivingWageButton {
+    width: 14rem;
+    padding: 1rem;
+    background-color: transparent;
+    top: -.5rem;
+}
+
+#declaration {
+    align-self: flex-end;
+    margin-right: 3rem;
+    margin: 1rem;
+}
+
+#noteToUs{
+    height: 3rem;
+    width: 14rem;
+    text-align: start;
+    text-justify: start;
+    border-radius: 10px;
+    padding: .2rem;
+    margin: .5rem;
+}
+
+#noteToUsLabel {
+    width: 10rem;
+}
+
+#declarationLabel {
+    width: 12rem;
+}
+
+#becomeReputableApplicationFormTitle{
+    margin-bottom: 1rem;
+    background-color: aliceblue;
+    color: #3349a3;
+    padding: .8rem;
+    border-radius: 20px;
+}
+
+
+#becomeReputableSubmit {
+    padding: 1rem;
+    font-size: 1.1rem;
 }
