@@ -44,20 +44,19 @@ const BecomeReputable = () => {
   return (
     <>
       <BackButton />
-      <div>
+      {error && <h3 className="error">{error.message}</h3>}
+      <form onSubmit={handleSubmit} className="becomeReputableForm">
         {eatery.moderatorNotes && (
-          <div>
-            <p>
-              Your application has been review and a moderator has left the
-              following message:
-            </p>
+          <div id="modNotes">
+            Your application has been review and a moderator has left the
+            following message:
+            <br />
+            <br />
             <p>{eatery.moderatorNotes}</p>
           </div>
         )}
-      </div>
-      {error && <h3 className="error">{error.message}</h3>}
-      <form onSubmit={handleSubmit} className="becomeReputableForm">
-        <h2 id="becomeReputableApplicationFormTitle">become reputable</h2>
+
+        <h2 id="becomeReputableApplicationFormTitle">list your eatery</h2>
         <label htmlFor="proofOfLivingWage" id="proofOfLivingWage">
           please attach proof that you are a living wage employer
         </label>
