@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import service from "../../services/apiHandler";
+import "./auth.css";
 
 const FormSignUp = () => {
   const [formData, setFormData] = useState({
@@ -23,9 +24,11 @@ const FormSignUp = () => {
   return (
     <>
       {error && <h3 className="error">{error.message}</h3>}
-      <form onSubmit={handleSubmit}>
-        <h2>Signup</h2>
-        <label htmlFor="username">usename</label>
+      <form onSubmit={handleSubmit} className="authForm">
+        <h2 className="authTitle">creat an account</h2>
+        <label htmlFor="username" className="authLabel">
+          usename
+        </label>
         <input
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -35,7 +38,9 @@ const FormSignUp = () => {
           id="username"
           name="username"
         />
-        <label htmlFor="email">email</label>
+        <label htmlFor="email" className="authLabel">
+          email
+        </label>
         <input
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -45,7 +50,9 @@ const FormSignUp = () => {
           id="email"
           name="email"
         />
-        <label htmlFor="password">password</label>
+        <label htmlFor="password" className="authLabel">
+          password
+        </label>
         <input
           onChange={(e) =>
             setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -55,19 +62,21 @@ const FormSignUp = () => {
           id="password"
           name="password"
         />
-        <label htmlFor="role">eatery owner?</label>
-        <select
-          name="role"
-          id="role"
-          onChange={(e) =>
-            setFormData({ ...formData, [e.target.name]: e.target.value })
-          }
-          required
-        >
-          <option value="user">no</option>
-          <option value="eateryAccount">yes</option>
-        </select>
-        <button>Submit</button>
+        <div className="eateryAccountQ">
+          <label htmlFor="role">eatery owner?</label>
+          <select
+            name="role"
+            id="role"
+            onChange={(e) =>
+              setFormData({ ...formData, [e.target.name]: e.target.value })
+            }
+            required
+          >
+            <option value="user">no</option>
+            <option value="eateryAccount">yes</option>
+          </select>
+        </div>
+        <button className="authButton">sign up</button>
       </form>
     </>
   );
