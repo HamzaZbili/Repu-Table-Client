@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import service from "../../services/apiHandler";
 import EateryCard from "../Eateries/EateryCard";
 import { Link } from "react-router-dom";
