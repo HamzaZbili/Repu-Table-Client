@@ -1,0 +1,31 @@
+.roleFormContainer {
+    background-color: white;
+    color: rgb(82, 78, 78);
+    margin: 2rem 6rem 1rem 6rem;
+    padding: 1rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.roleFormLabel {
+    /* margin: 0 .7rem 0 .7rem; */
+}
+
+#role {
+    border-radius: 30px;
+    text-align: center;
+   margin: .8rem;
+    background-color: aliceblue;
+    color: rgb(65, 61, 61);
+}
+
+input {
+    border-radius: 30px;
+    text-align: center;
+    padding: 0 2rem 0 2rem;
+    background-color: aliceblue;
+    color: rgb(65, 61, 61);
+}

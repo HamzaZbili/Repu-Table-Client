@@ -64,6 +64,7 @@
     background-color: white;
     color: rgb(65, 104, 71);
     text-align: right;
+    font-size: .7rem;
 }
 .eateryContactDetails p {
     margin: 0;

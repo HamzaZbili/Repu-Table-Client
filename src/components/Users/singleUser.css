@@ -6,8 +6,19 @@
 .userProfile {
     background-color: #3349a3;
     color: white;
+    margin: 2rem 5rem 1rem 5rem;
+    padding: 1rem;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.userEateries {
+    background-color: #ff65c4;
+    color: white;
     margin: 2rem 4rem 1rem 4rem;
     padding: 1rem;
     border-radius: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }

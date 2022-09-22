@@ -26,7 +26,7 @@ const SingleUser = () => {
       console.log(error.message);
     }
   }, []);
-  console.log(userEateries);
+  // console.log(userEateries);
   return (
     <div>
       <BackButton />
@@ -40,6 +40,7 @@ const SingleUser = () => {
           </div>
           {userEateries && (
             <div className="userEateries">
+              <h3>user eateries</h3>
               {userEateries.map((eatery) => {
                 return (
                   <Link key={eatery._id} to={`/mod/eateries/${eatery._id}`}>

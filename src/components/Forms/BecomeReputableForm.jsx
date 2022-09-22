@@ -58,7 +58,7 @@ const BecomeReputable = () => {
         )}
       </div>
       {error && <h3 className="error">{error.message}</h3>}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="becomeReputableForm">
         <h4>become reputable</h4>
         <label htmlFor="proofOfLivingWage">
           please attach proof that you are a living wage employer

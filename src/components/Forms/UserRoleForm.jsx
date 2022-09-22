@@ -1,25 +1,28 @@
 import React from "react";
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import service from "../../services/apiHandler";
+import "./userRoleForm.css";
 
 const UserRoleForm = () => {
   const { id } = useParams();
   const [formData, setFormData] = useState({ _id: id, role: "" });
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await service.patch(`/mod/users/${id}`, formData);
       console.log(res);
+      navigate(`/mod/users`);
     } catch (error) {
       console.log(error.message);
     }
   };
   return (
-    <>
+    <div className="roleFormContainer">
+      <h3 className="roleFormLabel">modify user role</h3>
       <form onSubmit={handleSubmit}>
-        <h2>modify user role</h2>
         <select
           name="role"
           id="role"
@@ -32,10 +35,9 @@ const UserRoleForm = () => {
           <option value="moderator">moderator</option>
           <option value="super">super</option>
         </select>
-        <input type="submit" value="apply role" />
-        {/* {error && <h3 className="error">{error.message}</h3>} */}
+        <input type="submit" value="apply change" />
       </form>
-    </>
+    </div>
   );
 };
 
