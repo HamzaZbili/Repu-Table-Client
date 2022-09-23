@@ -40,7 +40,7 @@ const EateryAccount = () => {
   ];
   return (
     <>
-      <div>
+      <div id="accountEateryContainer">
         <BackButton />
         {currentUser && (
           <h3 className="accountWelcomeMessage">Hi {currentUser.username}!</h3>
@@ -55,10 +55,10 @@ const EateryAccount = () => {
             key={status}
           />
         ))}
+        <Link className="postNewEateryLink" to="/eateries/my/new">
+          post a new eatery
+        </Link>
       </div>
-      <Link className="postNewEateryLink" to="/eateries/my/new">
-        post a new eatery
-      </Link>
     </>
   );
 };

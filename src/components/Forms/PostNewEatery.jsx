@@ -54,15 +54,15 @@ const PostNewEatery = () => {
   const [formData, setFormData] = useState({
     businessName: "",
     address: "",
-    cuisine: [],
+    cuisine: "",
     description: "",
-    photo: "",
     website: "",
     email: "",
     phoneNumber: "",
   });
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -70,18 +70,22 @@ const PostNewEatery = () => {
       for (const key in formData) {
         data.append(key, formData[key]);
       }
-      data.append("image", file);
+      data.append("photo", file);
+      console.log(data);
       const newEatery = await service
-        .post(`/eateries/my/new`, formData)
-        .then((response) => console.log(response.data))
+        .post(`/eateries/my/new`, data)
+        // .then((response) => console.log(response.data))
         .then(navigate("/eateries/my"));
+      // console.log("file", file);
+      // console.log("new eatery", newEatery);
+      // console.log("formData", formData);
     } catch (error) {
       console.log(error.message);
     }
   };
 
   return (
-    <>
+    <div>
       <BackButton />
       <form onSubmit={handleSubmit} id="postNewEateryForm">
         {fields.map((fieldInfo, key) => {
@@ -116,7 +120,7 @@ const PostNewEatery = () => {
           id="postNewEateryFormSubmitButton"
         />
       </form>
-    </>
+    </div>
   );
 };
 

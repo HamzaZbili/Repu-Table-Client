@@ -1,3 +1,8 @@
+.postNewEateryFormContainer {
+    padding-bottom: 10rem;
+    background-color: black;
+}
+
 #postNewEateryForm {
     display: flex;
     flex-direction: column;
@@ -30,6 +35,7 @@
 
 #postNewEateryForm .businessName {
     width: 12rem;
+    height: 2.1rem;
     background-color: rgb(231, 244, 255);
 }
 #postNewEateryForm label{
@@ -43,7 +49,8 @@
 }
 
 #postNewEateryForm .cuisine {
-    width: 8rem;
+    width: 9rem;
+    padding: .1rem;
     background-color: rgb(231, 244, 255);
 }
 
@@ -71,6 +78,12 @@
     height: 2rem;
     padding: .1rem;
     background-color: rgb(231, 244, 255);
+}
+#postNewEateryForm #image {
+    width: 18rem;
+    height: 2.5rem;
+    padding: .7rem;
+    background-color: transparent;
 }
 
 #postNewEateryFormSubmitButton {

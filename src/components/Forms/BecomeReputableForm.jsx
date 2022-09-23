@@ -34,8 +34,10 @@ const BecomeReputable = () => {
       }
       data.append("image", file);
       const res = await service.patch(`/eateries/my/${id}`, data);
-      console.log(res);
       navigate("/eateries/my");
+      console.log("file", file);
+      console.log("res", res);
+      console.log("formData", formData);
     } catch (error) {
       console.error(error);
       setError(error.message);
