@@ -1,6 +1,6 @@
 import React from "react";
 import { Input } from "antd";
-import "../Navbar/navbar.css";
+import "./searchEateries.css";
 
 const SearchEateries = ({ searchQuery, setSearchQuery }) => {
   return (

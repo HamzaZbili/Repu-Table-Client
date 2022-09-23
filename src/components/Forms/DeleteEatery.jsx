@@ -7,6 +7,7 @@ const DeleteEatery = ({ id, updateEateries }) => {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
+      console.log("deleted");
       service.delete(`/eateries/my/delete/${id}`).then(() => {
         updateEateries();
         navigate("/eateries/my");
@@ -16,7 +17,13 @@ const DeleteEatery = ({ id, updateEateries }) => {
     }
   };
   return (
-    <button className="deleteEateryButton" onClick={handleClick}>
+    <button
+      className="deleteEateryButton"
+      onClick={(e) => {
+        if (window.confirm("Are you sure you wish to delete this eatery?"))
+          handleClick(e);
+      }}
+    >
       delete
     </button>
   );

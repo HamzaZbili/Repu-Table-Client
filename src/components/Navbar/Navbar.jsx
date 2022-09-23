@@ -44,14 +44,8 @@ const Navbar = () => {
                 </NavLink>
               ) : currentUser.role === "user" ? (
                 <>
-                  <NavLink to="/eateries/my" onClick={toggleNavbar}>
+                  <NavLink to={`/eateries/my`} onClick={toggleNavbar}>
                     <div>join us!</div>
-                  </NavLink>
-                  <NavLink
-                    to={`/eateries/reviews/my/${currentUser._id}`}
-                    onClick={toggleNavbar}
-                  >
-                    <div>my reviews</div>
                   </NavLink>
                 </>
               ) : (
@@ -64,6 +58,12 @@ const Navbar = () => {
         </>
         {isLoggedIn && (
           <>
+            <NavLink
+              to={`/eateries/reviews/my/${currentUser._id}`}
+              onClick={toggleNavbar}
+            >
+              <div>my reviews</div>
+            </NavLink>
             <NavLink to="/eateries" onClick={toggleNavbar}>
               <div onClick={removeUser}>logout</div>
             </NavLink>

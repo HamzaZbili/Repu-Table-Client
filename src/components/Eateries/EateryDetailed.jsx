@@ -5,6 +5,7 @@ import service from "../../services/apiHandler";
 import BackButton from "../Navbar/BackButton";
 import "./eateryCard.css";
 import Reviews from "./Reviews";
+import StarRating from "./StarRating";
 
 const EateryDetailed = () => {
   const [eateryDetailed, setEateryDetailed] = useState({});
@@ -38,7 +39,7 @@ const EateryDetailed = () => {
         </div>
         <div className="eateryContactDetails">
           <p>{address}</p>
-          <p>{website}</p>
+          <p>{website?.slice(0, 30)}...</p>
           <p>{phoneNumber}</p>
           <p>{email}</p>
         </div>

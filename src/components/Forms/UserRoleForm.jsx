@@ -12,13 +12,14 @@ const UserRoleForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await service.patch(`/mod/users/${id}`, formData);
-      console.log(res);
-      navigate(`/mod/users`);
+      const res = await service
+        .patch(`/mod/users/${id}`, formData)
+        .then(() => navigate(`/mod/users`));
     } catch (error) {
-      console.log(error.message);
+      console.log(error);
     }
   };
+
   return (
     <div className="roleFormContainer">
       <h3 className="roleFormLabel">modify user role</h3>
@@ -35,7 +36,7 @@ const UserRoleForm = () => {
           <option value="moderator">moderator</option>
           <option value="super">super</option>
         </select>
-        <input type="submit" value="apply change" />
+        <input id="roleFormSubmitButton" type="submit" value="apply change" />
       </form>
     </div>
   );

@@ -20,13 +20,13 @@ const EateryAccount = () => {
     updateEateries();
   }, [updateEateries]);
 
-  if (!userEateries.length)
-    return (
-      <div className="accountContainer">
-        <BackButton />
-        <Link to="/eateries/my/new">post a new eatery</Link>
-      </div>
-    );
+  // if (!userEateries.length)
+  //   return (
+  //     <div className="accountContainer">
+  //       <BackButton />
+  //       <Link to="/eateries/my/new">post a new eatery</Link>
+  //     </div>
+  //   );
 
   const eateryCollections = [
     { label: "reputable eateries", status: "repu-table", hasManageLink: false },
@@ -38,7 +38,6 @@ const EateryAccount = () => {
     { label: "application sent", status: "pending", text: "amend" },
     { label: "yet to apply", status: "false", text: "apply" },
   ];
-
   return (
     <>
       <div>

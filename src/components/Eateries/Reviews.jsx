@@ -6,6 +6,7 @@ import service from "../../services/apiHandler";
 import PostReview from "../Forms/PostReview";
 import "./reviews.css";
 import SingleReview from "./SingleReview";
+import StarRating from "./StarRating";
 
 const Reviews = () => {
   const [allReviews, setAllReviews] = useState();
@@ -30,8 +31,14 @@ const Reviews = () => {
   let rating = 0;
   allReviews?.forEach((review) => (rating += review.rating));
   const average = rating / allReviews?.length;
+  console.log(average);
   return (
     <>
+      {average && (
+        <div id="averageRating">
+          av. <StarRating>{average}</StarRating>
+        </div>
+      )}
       <PostReview updateReviewsList={updateReviewsList} />
       <div className="reviews">
         {allReviews?.map((review) => {

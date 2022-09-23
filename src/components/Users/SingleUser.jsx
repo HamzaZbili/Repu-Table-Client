@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import service from "../../services/apiHandler";
 import UserRoleForm from "../Forms/UserRoleForm";
 import BackButton from "../Navbar/BackButton";
@@ -11,6 +11,7 @@ const SingleUser = () => {
   const [user, setUser] = useState();
   const [userEateries, setUserEateries] = useState();
   const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     try {
@@ -26,6 +27,17 @@ const SingleUser = () => {
       console.log(error.message);
     }
   }, []);
+
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await service
+        .delete(`/mod/users/${id}`)
+        .then(() => navigate(`/mod/users`));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   // console.log(userEateries);
   return (
     <div>
@@ -38,7 +50,7 @@ const SingleUser = () => {
             <p>email: {user.email}</p>
             <p>tel: {user.phoneNumber}</p>
           </div>
-          {userEateries && (
+          {userEateries?.length ? (
             <div className="userEateries">
               <h3>user eateries</h3>
               {userEateries.map((eatery) => {
@@ -49,8 +61,19 @@ const SingleUser = () => {
                 );
               })}
             </div>
+          ) : (
+            ""
           )}
           <UserRoleForm />
+          <button
+            className="deleteUserButton"
+            onClick={(e) => {
+              if (window.confirm("Are you sure you want delete this user?"))
+                handleDelete(e);
+            }}
+          >
+            delete
+          </button>
         </div>
       )}
     </div>

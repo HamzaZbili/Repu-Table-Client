@@ -22,3 +22,14 @@
     display: flex;
     flex-direction: column;
 }
+.deleteUserButton{
+    margin: 0 .5rem 0 .5rem;
+    border: 0;
+    background-color: rgb(211, 11, 11);
+    color: white;
+    padding: .5rem;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px grey;
+    position: relative;
+    left: 16rem;
+}

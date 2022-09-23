@@ -18,7 +18,7 @@
     border-radius: 30px;
     text-align: center;
    margin: .8rem;
-    background-color: aliceblue;
+    background-color: rgb(157, 209, 255);
     color: rgb(65, 61, 61);
 }
 
@@ -26,7 +26,13 @@ input {
     border-radius: 30px;
     text-align: center;
     padding: 0 2rem 0 2rem;
-    background-color: aliceblue;
+    background-color: rgb(175, 218, 255);
     color: rgb(65, 61, 61);
     border: 0;
+}
+
+#roleFormSubmitButton {
+    color: white;
+    background-color: rgb(85, 197, 84);
+    height: 2rem;
 }

@@ -27,7 +27,7 @@
 }
 
 .shortDetails h6{
-    color: #ff65c4;
+    color: #3349a3;
     font-size: .8rem;
 }
 
@@ -52,7 +52,7 @@
     padding: 1.2rem;
     border-radius: 30px;
     margin: 1rem;
-    background-color: white;
+    background-color: aliceblue;
     color: rgb(65, 104, 71);
     overflow:auto;
 }
