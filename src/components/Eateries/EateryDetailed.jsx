@@ -39,7 +39,7 @@ const EateryDetailed = () => {
         </div>
         <div className="eateryContactDetails">
           <p>{address}</p>
-          <p>{website?.slice(0, 30)}...</p>
+          <p>{website?.slice(0, 40)}...</p>
           <p>{phoneNumber}</p>
           <p>{email}</p>
         </div>

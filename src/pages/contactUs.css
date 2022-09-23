@@ -13,12 +13,14 @@
     padding: .5rem 1rem .5rem 1rem;
     border-radius: 20px;
     align-self: flex-start;
+    position: relative;
+    left: 2.4rem;
 }
 .whiteBox {
     background-color: white;
     opacity: .7;
     margin: 1rem;
-    padding: .5rem;
+    padding: .7rem;
     border-radius: 20px;
 }
 .contactDetails {
