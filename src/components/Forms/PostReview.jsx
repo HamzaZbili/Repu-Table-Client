@@ -51,7 +51,7 @@ const PostReview = ({ updateReviewsList }) => {
       <div>
         <ReactStars
           count={5}
-          value={formData.name}
+          value={formData.name && 0}
           onChange={(e) => {
             console.log(e);
             setFormData({ ...formData, rating: e });

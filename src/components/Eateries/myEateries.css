@@ -14,8 +14,10 @@
     margin: 0 .5rem 0 .5rem;
     border: 0;
     background-color: rgb(184, 110, 110);
+    height: 2.2rem;
     color: white;
     padding: .5rem;
+    padding-bottom: .8rem;
     border-radius: 20px;
     box-shadow: 2px 2px 2px grey;
 }
@@ -25,7 +27,9 @@
     border: 0;
     background-color: rgb(99, 99, 156);
     color: white;
+    height: 2.2rem;
     padding: .5rem;
+    padding-bottom: .8rem;
     border-radius: 20px;
     box-shadow: 2px 2px 2px grey;
 }

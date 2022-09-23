@@ -22,10 +22,64 @@
     padding: 2rem;
 }
 
+#postNewEateryForm {
+    height: auto;
+    padding-bottom: 3rem;
+}
+
+
+#postNewEateryForm .businessName {
+    width: 12rem;
+    background-color: rgb(231, 244, 255);
+}
+#postNewEateryForm label{
+    padding-left: 1rem;
+    color: rgb(80, 80, 146);
+}
+
+#postNewEateryForm .address {
+    height: 2.2rem;
+    background-color: rgb(231, 244, 255);
+}
+
+#postNewEateryForm .cuisine {
+    width: 8rem;
+    background-color: rgb(231, 244, 255);
+}
+
+#postNewEateryForm .description {
+    height: 3rem;
+    padding: .5rem;
+    margin: .5rem;
+    background-color: white;
+}
+
+#postNewEateryForm .website {
+    width: 15rem;
+    height: 2rem;
+    background-color: rgb(231, 244, 255);
+}
+
+#postNewEateryForm .email {
+    width: 18rem;
+    height: 2rem;
+    background-color: rgb(231, 244, 255);
+}
+
+#postNewEateryForm .phoneNumber {
+    width: 10rem;
+    height: 2rem;
+    padding: .1rem;
+    background-color: rgb(231, 244, 255);
+}
+
 #postNewEateryFormSubmitButton {
-    padding: .6rem;
+    padding: .8rem;
     padding-bottom: .8rem;
     margin: 1rem;
+    height: 3.5rem;
     font-size: 1.2rem;
-    box-shadow: 2px 2px 2px grey;
+    background-color: rgb(0, 167, 0);
+    color: white;
+    box-shadow: 4px 4px 4px grey;
 }

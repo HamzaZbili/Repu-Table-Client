@@ -10,7 +10,7 @@ const fields = [
     label: "business name",
     fieldName: "businessName",
     type: "text",
-    placeholder: "business name",
+    placeholder: "my eatery",
   },
   {
     label: "address",
@@ -28,7 +28,7 @@ const fields = [
     label: "description",
     fieldName: "description",
     type: "text",
-    placeholder: "steak house",
+    placeholder: "enter description..",
   },
   {
     label: "website",
@@ -43,7 +43,7 @@ const fields = [
     placeholder: "workersunite@workplace.co.uk",
   },
   {
-    label: "tel number",
+    label: "tel",
     fieldName: "phoneNumber",
     type: "text",
     placeholder: "07123456789",
@@ -59,7 +59,7 @@ const PostNewEatery = () => {
     photo: "",
     website: "",
     email: "",
-    phoneNumber: 0,
+    phoneNumber: "",
   });
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
@@ -88,6 +88,7 @@ const PostNewEatery = () => {
           return (
             <div key={key}>
               <Input
+                className={fieldInfo.fieldName}
                 {...fieldInfo}
                 key={key}
                 formData={formData}

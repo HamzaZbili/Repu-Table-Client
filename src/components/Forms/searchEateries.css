@@ -3,4 +3,21 @@
     background-color: rgb(101, 170, 173);
     text-align: left;
     height: 2rem;
+    width: 16rem;
+    color: white;
+    padding-left: 0;
+}
+.searchBarContainer {
+    display: flex;
+    flex-direction: row;
+    width: 18rem;
+    background-color: rgb(101, 170, 173);
+    margin-left: 2.7rem;
+    border-radius: 30px;
+}
+.searchBarContainer img {
+    background-color: rgb(101, 170, 173);
+    padding: .4rem;
+    height: 2rem;
+    border-radius: 30px;
 }
