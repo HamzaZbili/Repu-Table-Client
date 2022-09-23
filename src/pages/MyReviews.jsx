@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import SingleReview from "../components/Eateries/SingleReview";
 import useAuth from "../context/auth/useAuth";
 import service from "../services/apiHandler";
 
@@ -19,7 +20,7 @@ const MyReviews = () => {
     <>
       {myReviews
         ? myReviews.map((review) => {
-            return <div key={review._id}>{review.content}</div>;
+            return <SingleReview key={review._id} review={review} />;
           })
         : ""}
     </>

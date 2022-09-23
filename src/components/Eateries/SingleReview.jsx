@@ -12,6 +12,7 @@ const SingleReview = ({ review }) => {
         </div>
       </div>
       <div className="reviewContent">{review.content}</div>
+      <h3 className="reviewBusinessName">{review.eatery.businessName}</h3>
     </div>
   );
 };

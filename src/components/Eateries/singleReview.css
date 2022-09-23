@@ -5,6 +5,11 @@
     padding: 1rem;
     margin: 1rem;
 }
+.reviewBusinessName {
+    position: relative;
+    top: -4.5rem;
+    left: .7rem;
+}
 
 .reviewTitle {
     justify-content: space-between;
