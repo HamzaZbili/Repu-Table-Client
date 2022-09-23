@@ -5,7 +5,6 @@ import Oops from "./pages/Oops";
 import PrivateRoute from "./components/ProtectedRoute/PrivateRoute";
 import Layout from "./components/General/Layout";
 import HomeFeed from "./components/General/HomeFeed";
-import Welcome from "./components/General/Welcome";
 import EateryDetailed from "./components/Eateries/EateryDetailed";
 import Guidelines from "./pages/Guidelines";
 import ContactUs from "./pages/ContactUs";
@@ -19,6 +18,7 @@ import PostNewEatery from "./components/Forms/PostNewEatery";
 import MyReviews from "./pages/MyReviews";
 import ModEateryView from "./components/Eateries/ModEateryView";
 import useAuth from "./context/auth/useAuth";
+import LandingPage from "./components/General/LandingPage";
 
 function App() {
   const { currentUser } = useAuth();
@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/" element={<Welcome />} />
+          <Route path="/" element={<LandingPage />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/eateries" element={<HomeFeed />} />

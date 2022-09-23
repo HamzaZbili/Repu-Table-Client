@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "../components/Navbar/BackButton";
 import Users from "../components/Users/Users";
 import service from "../services/apiHandler";
@@ -29,7 +28,7 @@ const UserAdmin = () => {
   ];
 
   return (
-    <div style={{ paddingBottom: 100 }}>
+    <div>
       <BackButton />
       {userCollections.map(({ label, status }) => {
         return (

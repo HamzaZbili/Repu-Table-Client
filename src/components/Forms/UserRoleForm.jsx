@@ -23,7 +23,12 @@ const UserRoleForm = () => {
   return (
     <div className="roleFormContainer">
       <h3 className="roleFormLabel">modify user role</h3>
-      <form onSubmit={handleSubmit}>
+      <form
+        onSubmit={(e) => {
+          if (window.confirm(`update user role to ${formData.role}?`))
+            handleSubmit(e);
+        }}
+      >
         <select
           name="role"
           id="role"

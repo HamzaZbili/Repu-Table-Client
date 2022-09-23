@@ -22,9 +22,12 @@ const EateryDetailedOwner = () => {
   return (
     <div className="eateryContainer">
       <BackButton />
-      <img src={photo} alt="eatery image" />
-      <h2>{businessName}</h2>
-      <p>{description}</p>
+      <img src={photo} alt="eatery image" id="eateryImage" />
+      <div className="description">
+        {" "}
+        <h2>{businessName}</h2>
+        <p>{description}</p>
+      </div>
     </div>
   );
 };

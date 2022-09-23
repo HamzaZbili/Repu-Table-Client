@@ -21,7 +21,7 @@ const FormSignIn = () => {
       await authenticateUser();
       navigate("/eateries");
     } catch (error) {
-      setError(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -53,8 +53,8 @@ const FormSignIn = () => {
           }
           value={user.password}
         />
+        {error && <h5 className="error">{error}</h5>}
         <button className="authButton">sign in</button>
-        {error && <h3 className="error">{error.message}</h3>}
       </form>
       <div className="linkToAltAuth">
         <p>don't have an account?</p>

@@ -18,7 +18,7 @@ const FormSignUp = () => {
       const res = await service.signup(formData);
       navigate("/signin");
     } catch (error) {
-      setError(e.message);
+      setError(error.response.data.message);
     }
   };
   return (
@@ -76,6 +76,7 @@ const FormSignUp = () => {
             <option value="eateryAccount">yes</option>
           </select>
         </div>
+        {error && <h5 className="error">{error}</h5>}
         <button className="authButton">sign up</button>
       </form>
       <div className="linkToAltAuth">

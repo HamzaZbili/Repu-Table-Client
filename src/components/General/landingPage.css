@@ -1,0 +1,13 @@
+#landingPage {
+    margin: 4rem;
+    margin-top: 10rem;
+}
+
+#landingPage h1 {
+    color: cadetblue;
+    background-color: aliceblue;
+    width: 14.5rem;
+    padding: 1rem;
+    border-radius: 50px;
+    box-shadow: 2px 2px 2px grey;
+}
