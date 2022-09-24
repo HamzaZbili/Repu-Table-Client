@@ -1,22 +1,22 @@
 .searchBar {
     border: none;
-    background-color: rgb(101, 170, 173);
+    background-color: transparent;
     text-align: left;
     height: 2rem;
     width: 16rem;
-    color: white;
+    color: grey;
     padding-left: 0;
 }
 .searchBarContainer {
     display: flex;
     flex-direction: row;
     width: 18rem;
-    background-color: rgb(101, 170, 173);
+    height: 2.2rem;
+    background-color: rgb(232, 244, 255);
     margin-left: 2.7rem;
     border-radius: 30px;
 }
 .searchBarContainer img {
-    background-color: rgb(101, 170, 173);
     padding: .4rem;
     height: 2rem;
     border-radius: 30px;

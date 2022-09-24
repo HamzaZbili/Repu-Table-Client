@@ -8,22 +8,14 @@
 	font-family: 'Lato', sans-serif;
 }
 
-
-:root {
-	--mainColor: #eaeaea;
-	--mainColorLight: #3349a3;
-	--secondaryColor: #db2b39;
-	--textColor: white;
-}
-
 header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	height: 110px;
 	padding: 0 2rem;
-	background-color: var(--mainColor);
-	color: var(--textColor);
+	background-color:white;
+	color: white
 }
 
 .homeLogo {
@@ -36,8 +28,8 @@ h1 {
 	font-size: 3rem;
 	padding-top: .5rem;
 	padding-bottom: 0;
-	background-color: var(--mainColor);
-	color: var(--textColor);
+	/* background-color: var(--mainColor);
+	color: var(--textColor); */
 }
 
 /* h6 {
@@ -70,7 +62,7 @@ button:focus {
 nav a {
 	margin: .5rem;
 	padding-bottom: .5rem;
-	color: var(--textColor);
+	color: white;
 	text-decoration: none;
 }
 
@@ -80,7 +72,7 @@ header .nav-btn {
 	background: transparent;
 	border: none;
 	outline: none;
-	color: var(--textColor);
+	color: rgba(255,101,196,1);
 	visibility: hidden;
 	opacity: 0;
 	font-size: 1.8rem;
@@ -108,7 +100,7 @@ nav {
 		flex-direction: column;
 		align-items: center;
 		justify-content: flex-end;
-		background-color: var(--mainColorLight);
+		background-color: #3349a3;
 		transition: 1s;
 		transform: translateY(-100vh);
 		border-radius: 0px 0px 0px 50px;
@@ -124,6 +116,7 @@ nav {
 		position: absolute;
 		top: 2rem;
 		right: 2rem;
+		color: white;
 	}
 
 	nav a {

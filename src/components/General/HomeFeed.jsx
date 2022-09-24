@@ -1,12 +1,24 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import service from "../../services/apiHandler";
 import EateryCard from "../Eateries/EateryCard";
 import { Link } from "react-router-dom";
+import { animated, useSpring } from "react-spring";
 import SearchEateries from "../Forms/SearchEateries";
 
 const HomeFeed = () => {
   const [allEateries, setAllEateries] = useState([]);
   const [searchQuery, setSearchQuery] = useState(``);
+
+  const styles = useSpring({
+    from: {
+      y: 800,
+    },
+    to: {
+      opacity: 1,
+      y: 0,
+    },
+    config: { duration: 250 },
+  });
 
   useEffect(() => {
     service.get("/eateries").then((response) => {
@@ -26,9 +38,11 @@ const HomeFeed = () => {
         )
         .map((eatery) => {
           return (
-            <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
-              <EateryCard eatery={eatery} />
-            </Link>
+            <animated.div style={styles}>
+              <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
+                <EateryCard eatery={eatery} />
+              </Link>
+            </animated.div>
           );
         })}
     </>
