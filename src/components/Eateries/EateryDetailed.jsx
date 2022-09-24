@@ -10,16 +10,16 @@ import { useSpring, animated } from "react-spring";
 const EateryDetailed = () => {
   const [eateryDetailed, setEateryDetailed] = useState({});
   const { id } = useParams();
-  const styles = useSpring({
-    from: {
-      y: 800,
-    },
-    to: {
-      opacity: 1,
-      y: 0,
-    },
-    config: { duration: 250 },
-  });
+  // const styles = useSpring({
+  //   from: {
+  //     y: 800,
+  //   },
+  //   to: {
+  //     opacity: 1,
+  //     y: 0,
+  //   },
+  //   config: { duration: 250 },
+  // });
   useEffect(() => {
     try {
       service.get(`/eateries/${id}`).then((response) => {
@@ -41,7 +41,7 @@ const EateryDetailed = () => {
   return (
     <div className="eateryContainer">
       <BackButton />
-      <animated.div style={styles}>
+      <animated.div>
         <img src={photo} alt="eatery image" id="eateryImage" />
         <div className="detailContainer">
           <div className="description">
