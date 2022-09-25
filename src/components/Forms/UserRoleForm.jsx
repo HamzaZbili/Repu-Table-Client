@@ -39,6 +39,7 @@ const UserRoleForm = () => {
         >
           <option value="user">user</option>
           <option value="moderator">moderator</option>
+          <option value="eateryAccount">eatery</option>
           <option value="super">super</option>
         </select>
         <input id="roleFormSubmitButton" type="submit" value="apply change" />

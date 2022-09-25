@@ -7,7 +7,7 @@
 .contactTitle {
     text-align: left;
     position: relative;
-    left: 3rem;
+    margin-left: 3rem;
     top: 1.5rem;
     z-index: 1;
 }

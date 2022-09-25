@@ -18,8 +18,6 @@ const UserAdmin = () => {
     }
   }, []);
 
-  if (!allUsers.length) return <div>Loading !</div>;
-
   const userCollections = [
     { label: "supers", status: "super" },
     { label: "moderators", status: "moderator" },

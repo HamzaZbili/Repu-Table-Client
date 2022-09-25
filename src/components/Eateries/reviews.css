@@ -36,6 +36,7 @@
     width: 16rem;
     height: 4rem;
     text-align: start;
+    box-shadow: 2px 2px 2px grey;
 }
 #starsContainer {
     display: flex;
@@ -56,10 +57,10 @@
     font-size: 1.5rem;
     border-radius: 30px;
     padding-left: 0.5rem;
-    width: 9rem;
+    width: 10.4rem;
     top: -22rem;
     color: rgb(219, 39, 69);
-    background-color: rgb(232, 189, 19);
+    background-color: white;
 }
 
 .starRating {

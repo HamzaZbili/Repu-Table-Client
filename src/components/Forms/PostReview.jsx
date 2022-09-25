@@ -37,7 +37,7 @@ const PostReview = ({ updateReviewsList }) => {
 
   return (
     <form onSubmit={handleSubmit} className="postReview">
-      <h3>leave review</h3>
+      <h3>leave a review</h3>
       <input
         type="text"
         id="content"
@@ -57,7 +57,7 @@ const PostReview = ({ updateReviewsList }) => {
             setFormData({ ...formData, rating: e });
           }}
           size={24}
-          activeColor="#FFFF00"
+          activeColor="#FFD700"
         />
       </div>
       <input id="postReviewSubmitButton" type="submit" value="post review" />

@@ -11,9 +11,9 @@ const Guidelines = () => {
         <div className="whiteBox">
           <p>
             The London Living Wage is an hourly rate of pay, currently set at
-            £11.05. It is calulated independently to reflect the high cost of
+            £11.95. It is calculated independently to reflect the high cost of
             living in the capital, giving a worker in London and their family
-            enough to afford afford the essentials and to save.
+            enough to afford the essentials and to save.
           </p>
         </div>
         <div className="equalOpportunitiesEmployer">
