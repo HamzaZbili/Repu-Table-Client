@@ -10,7 +10,7 @@ export const StarRating = (props) => {
   while (rate.length < 5) {
     rate.push("☆");
   }
-  return <div className="rating-display">{rate.flat()} </div>;
+  return <div className="starRating">{rate.flat()} </div>;
 };
 
 export default StarRating;

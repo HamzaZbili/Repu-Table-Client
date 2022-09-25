@@ -58,6 +58,10 @@
     padding-left: 0.5rem;
     width: 9rem;
     top: -22rem;
-    color: cornflowerblue;
-    background-color: cornsilk;
+    color: rgb(219, 39, 69);
+    background-color: rgb(232, 189, 19);
+}
+
+.starRating {
+    color: rgb(219, 39, 69);
 }

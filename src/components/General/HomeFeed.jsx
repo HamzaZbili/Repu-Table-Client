@@ -38,8 +38,8 @@ const HomeFeed = () => {
         )
         .map((eatery) => {
           return (
-            <animated.div style={styles}>
-              <Link to={`/eateries/${eatery._id}`} key={eatery._id}>
+            <animated.div style={styles} key={eatery._id}>
+              <Link to={`/eateries/${eatery._id}`}>
                 <EateryCard eatery={eatery} />
               </Link>
             </animated.div>
