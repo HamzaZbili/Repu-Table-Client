@@ -41,7 +41,7 @@ const EateryDetailed = () => {
   return (
     <div className="eateryContainer">
       <BackButton />
-      <animated.div>
+      <div>
         <img src={photo} alt="eatery image" id="eateryImage" />
         <div className="detailContainer">
           <div className="description">
@@ -59,7 +59,7 @@ const EateryDetailed = () => {
         <div>
           <Reviews />
         </div>
-      </animated.div>
+      </div>
     </div>
   );
 };

@@ -53,14 +53,15 @@
     text-align: left;
     flex-direction: row;
     position: relative;
-    left: 9rem;
+    left: 12rem;
     font-size: 1.5rem;
     border-radius: 30px;
     padding-left: 0.5rem;
-    width: 10.4rem;
-    top: -22rem;
+    width: 8.4rem;
+    top: -21.5rem;
     color: #ff65c4;
     background-color: white;
+    box-shadow: 1px 1px 1px grey;
 }
 
 .starRating {

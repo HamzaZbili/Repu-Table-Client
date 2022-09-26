@@ -14,12 +14,6 @@ const PostReview = ({ updateReviewsList }) => {
   const [error, setError] = useState(null);
   const { id } = useParams();
 
-  // const resetForm = () => {
-  //   setRating(0);
-  //   setContent("");
-  //   setIsContentFieldOpen(false);
-  // };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {

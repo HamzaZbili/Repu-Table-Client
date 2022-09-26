@@ -31,14 +31,13 @@ const Reviews = () => {
   let rating = 0;
   allReviews?.forEach((review) => (rating += review.rating));
   const average = rating / allReviews?.length;
-  console.log(average);
+  console.log(rating, allReviews?.length);
   return (
     <>
-      {average && (
-        <div id="averageRating">
-          <StarRating>{average}</StarRating>
-        </div>
-      )}
+      <div id="averageRating">
+        <StarRating>{isNaN(average) ? 0 : average}</StarRating>
+      </div>
+
       <PostReview updateReviewsList={updateReviewsList} />
       <div className="reviews">
         {allReviews?.map((review) => {

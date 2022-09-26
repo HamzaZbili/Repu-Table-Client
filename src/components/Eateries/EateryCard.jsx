@@ -32,7 +32,7 @@ const EateryCard = ({ eatery }) => {
     <div className="eateryCard" style={{ backgroundImage: `url(${photo})` }}>
       <div className="shortDetails">
         <h6 className="eateryNameEateryCard">{businessName}</h6>
-        {rating && <StarRating key={1}>{average}</StarRating>}
+        {<StarRating key={1}>{average}</StarRating>}
       </div>
     </div>
   );
