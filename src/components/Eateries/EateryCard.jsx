@@ -31,7 +31,7 @@ const EateryCard = ({ eatery }) => {
   return (
     <div className="eateryCard" style={{ backgroundImage: `url(${photo})` }}>
       <div className="shortDetails">
-        <h6>{businessName}</h6>
+        <h6 className="eateryNameEateryCard">{businessName}</h6>
         {rating && <StarRating key={1}>{average}</StarRating>}
       </div>
     </div>

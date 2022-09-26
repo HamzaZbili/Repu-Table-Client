@@ -28,24 +28,24 @@ const Navbar = () => {
               {currentUser.role === "super" ? (
                 <>
                   <NavLink to="/mod/users" onClick={toggleNavbar}>
-                    <div>users</div>
+                    <div>Users</div>
                   </NavLink>
                   <NavLink to="/mod/eateries" onClick={toggleNavbar}>
-                    <div>pending</div>
+                    <div>Pending</div>
                   </NavLink>
                 </>
               ) : currentUser.role === "moderator" ? (
                 <NavLink to="/mod/eateries" onClick={toggleNavbar}>
-                  <div>pending</div>
+                  <div>Pending</div>
                 </NavLink>
               ) : currentUser.role === "eateryAccount" ? (
                 <NavLink to="/eateries/my" onClick={toggleNavbar}>
-                  <div>my eateries</div>
+                  <div>My Eateries</div>
                 </NavLink>
               ) : currentUser.role === "user" ? (
                 <>
                   <NavLink to={`/eateries/my`} onClick={toggleNavbar}>
-                    <div>join us!</div>
+                    <div>Join Us!</div>
                   </NavLink>
                 </>
               ) : (
@@ -62,20 +62,20 @@ const Navbar = () => {
               to={`/eateries/reviews/my/${currentUser._id}`}
               onClick={toggleNavbar}
             >
-              <div>my reviews</div>
+              <div>My Reviews</div>
             </NavLink>
             <NavLink to="/eateries" onClick={toggleNavbar}>
-              <div onClick={removeUser}>logout</div>
+              <div onClick={removeUser}>Logout</div>
             </NavLink>
           </>
         )}
         {!isLoggedIn && (
           <>
             <NavLink to="/signin" onClick={toggleNavbar}>
-              <div>login</div>
+              <div>Login</div>
             </NavLink>
             <NavLink to="/signup" onClick={toggleNavbar}>
-              <div>sign up</div>
+              <div>Sign Up</div>
             </NavLink>
           </>
         )}

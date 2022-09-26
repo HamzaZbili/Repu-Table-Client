@@ -17,7 +17,7 @@ const HomeFeed = () => {
       opacity: 1,
       y: 0,
     },
-    config: { duration: 250 },
+    config: { duration: 300 },
   });
 
   useEffect(() => {

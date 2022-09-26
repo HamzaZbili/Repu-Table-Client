@@ -46,11 +46,12 @@ const EateryDetailed = () => {
         <div className="detailContainer">
           <div className="description">
             <h3>{businessName}</h3>
+            <br />
             {description}
           </div>
           <div className="eateryContactDetails">
             <p>{address}</p>
-            <p>{website?.slice(0, 40)}...</p>
+            <p>{website?.slice(0, 35)}...</p>
             <p>{phoneNumber}</p>
             <p>{email}</p>
           </div>

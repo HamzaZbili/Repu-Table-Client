@@ -1,12 +1,12 @@
 import React from "react";
-import "./landingPage.css";
 import { NavLink } from "react-router-dom";
+import "./landingPage.css";
 
 const LandingPage = () => {
   return (
     <div id="landingPage">
       <NavLink to="/eateries">
-        <h1>welcome</h1>
+        <h1>Welcome</h1>
       </NavLink>
     </div>
   );

@@ -4,17 +4,23 @@
     text-align: left;
     height: 2rem;
     width: 16rem;
-    color: grey;
+    color: white;
     padding-left: 0;
 }
+
+.searchBar::placeholder {
+    color: white;
+    opacity: 1;
+  }
 .searchBarContainer {
     display: flex;
     flex-direction: row;
     width: 18rem;
     height: 2.2rem;
-    background-color: rgb(232, 244, 255);
+    background-color: green;
+    opacity: .5;
     margin-left: 2.7rem;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 .searchBarContainer img {
     padding: .4rem;

@@ -36,7 +36,7 @@ const Reviews = () => {
     <>
       {average && (
         <div id="averageRating">
-          av. <StarRating>{average}</StarRating>
+          <StarRating>{average}</StarRating>
         </div>
       )}
       <PostReview updateReviewsList={updateReviewsList} />
