@@ -4,6 +4,7 @@ import EateryCard from "../Eateries/EateryCard";
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
 import SearchEateries from "../Forms/SearchEateries";
+import "./homeFeed.css";
 
 const HomeFeed = () => {
   const [allEateries, setAllEateries] = useState([]);
@@ -32,19 +33,21 @@ const HomeFeed = () => {
         setSearchQuery={setSearchQuery}
         searchQuery={searchQuery}
       />
-      {allEateries
-        .filter((eatery) =>
-          eatery.businessName.toLowerCase().includes(searchQuery)
-        )
-        .map((eatery) => {
-          return (
-            <animated.div style={styles} key={eatery._id}>
-              <Link to={`/eateries/${eatery._id}`}>
-                <EateryCard eatery={eatery} />
-              </Link>
-            </animated.div>
-          );
-        })}
+      <div id="homeFeed">
+        {allEateries
+          .filter((eatery) =>
+            eatery.businessName.toLowerCase().includes(searchQuery)
+          )
+          .map((eatery) => {
+            return (
+              <animated.div style={styles} key={eatery._id}>
+                <Link to={`/eateries/${eatery._id}`}>
+                  <EateryCard eatery={eatery} />
+                </Link>
+              </animated.div>
+            );
+          })}
+      </div>
     </>
   );
 };

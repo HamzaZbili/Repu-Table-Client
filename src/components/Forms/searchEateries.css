@@ -3,7 +3,7 @@
     background-color: transparent;
     text-align: left;
     height: 2rem;
-    width: 16rem;
+    width: 70vw;
     color: white;
     padding-left: 0;
 }
@@ -15,7 +15,7 @@
 .searchBarContainer {
     display: flex;
     flex-direction: row;
-    width: 18rem;
+    width: 80vw;
     height: 2.2rem;
     background-color: green;
     opacity: .5;
@@ -26,4 +26,6 @@
     padding: .4rem;
     height: 2rem;
     border-radius: 30px;
+    position: absolute;
+    left: 80vw;
 }
